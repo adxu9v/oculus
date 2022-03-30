@@ -113,6 +113,12 @@
            if(sc>9400){$('.horizon').css({'transform':'scale(1)'})}
            if(sc<10000){s1.pause()}
            if(sc>=10000){s1.play()}
+           if(sc<=11000){$('.line').css({'left':'-1%'})}
+           if(sc>11000){$('.line').css({'left':'50%'})}
+           if(sc>12000){$('.line').css({'left':'100%'})}
+           if(sc>11500 && sc<11999){$('.content3_p').css({'opacity':'1'})}
+           if(sc>=12000 || sc<=11499){$('.content3_p').css({'opacity':'0'})}
+           if(sc>13000){$('.horizon').css({'transform':'scale(0.5)'})}
           
         //    if(sc<=1299){$('.content2_box>img').css({'opacity':'0'})}
         //    if(sc>1300){$('.content2_climb').css({'opacity':'1'})}
@@ -141,6 +147,7 @@
         *{padding: 0; margin: 0; list-style: none; font-family: 'Nanum Gothic', sans-serif;}
         .sc{position: fixed; padding: 10px; left: 0; top: 0; font-size: 30px; color: #000; z-index: 9999; background-color: #fff;}
         body,html{height: 100%;}
+        body{ overflow-X: hidden;}
         header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0; margin: auto; z-index: 999;}
         .header_box{width: 90%; height: 100%; position: absolute; left: 50% ;top: 0; transform: translateX(-50%);}
         .header_box::after{content: ""; display: block; clear: both;}
@@ -208,6 +215,9 @@
         .horizon{position: absolute; left: 50%; top: 50%; width: none; height: none; transform: scale(0);  margin-left: -950px; margin-top: -500px; transition: 1s; }
         .content2_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s;}
         .content2_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
+        .line{width: 5px; height: 100%; background-color: red; position: absolute; left: -1%; top: 0; transition: 1s;}
+        .content3_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s;}
+        .content3_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
         .iphone{position: fixed; left: 0; top: 0;}
     </style>
     <style>
@@ -326,6 +336,14 @@
                 지금 오큘러스 스토어에서 다운받아보세요</p>
         </div>
         
+        </div>
+        <div class="line"></div>
+        <div class="content3_p">
+            <p>전작대비 20% 증가한 주사율 <br>
+                fhd의 풍부한 해상도 <br>
+                lcd의 편안한 디스플레이로 <br>
+                지금 즐겨보세요 <br>
+            </p>
         </div>
         <!-- <img src="iphone.png" alt="" class="iphone"> -->
     </div>
