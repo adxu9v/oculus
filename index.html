@@ -79,24 +79,33 @@
            sc = $(this).scrollTop()
            ss =$('.slide').height()
            $('.sc>h5').text(sc)
-           if(sc<=1200){$('.content2_climb').css({'transform':'scale(0)'})}
-           if(sc>1200 && sc <1600){$('.content2_climb').css({'transform':'scale('+(sc-1200)*0.00125+')'})}
-           if(sc<=1600){$('.content2_0x0').css({'transform':'scale(0)'})}
-           if(sc>1600 && sc<2000){$('.content2_0x0').css({'transform':'scale('+(sc-1600)*0.00075+')'})}
+           if(sc<=1200 || sc>6600){$('.content2_climb').css({'transform':'scale(0)'})}
+           if(sc>1200 && sc <=1600){$('.content2_climb').css({'transform':'scale('+(sc-1200)*0.00125+')'})}
+           if(sc>1600 && sc<=6200){$('.content2_climb').css({'transform':'scale(0.5)'})}
+           if(sc<=1600 || sc>7000){$('.content2_0x0').css({'transform':'scale(0)'})}
+           if(sc>1600 && sc<=2000){$('.content2_0x0').css({'transform':'scale('+(sc-1600)*0.00075+')'})}
+           if(sc>2000 && sc<=6600){$('.content2_0x0').css({'transform':'scale(0.3)'})}
+           if(sc<=2000 || sc>7400){$('.content2_beatsaber').css({'transform':'scale(0)'})}
            if(sc>2000 && sc<2400){$('.content2_beatsaber').css({'transform':'scale('+(sc-2000)*0.00075+')'})}
-           if(sc<=2000){$('.content2_beatsaber').css({'transform':'scale(0)'})}
-           if(sc<=2400){$('.content2_rpg').css({'transform':'scale(0)'})}
-           if(sc>2400 && sc<2800){$('.content2_rpg').css({'transform':'scale('+(sc-2400)*0.00083+')'})}
-           if(sc<=2800){$('.content2_starwars').css({'transform':'scale(0)'})}
-           if(sc>2800 && sc<3200){$('.content2_starwars').css({'transform':'scale('+(sc-2800)*0.001125+')'})}
-           if(sc<=3200){$('.content2_starwars2').css({'transform':'scale(0)'})}
-           if(sc>3200 && sc<3600){$('.content2_starwars2').css({'transform':'scale('+(sc-3200)*0.000625+')'})}
-           if(sc<=3600){$('.content2_combine').css({'transform':'scale(0)'})}
-           if(sc>3600 & sc<4000){$('.content2_combine').css({'transform':'scale('+(sc-3600)*0.0005+')'})}
-           if(sc<4000){$('.content2_vr').css({'transform':'scale(0)'})}
-           if(sc>4000 && sc<4400){$('.content2_vr').css({'transform':'scale('+(sc-4000)*0.000512+')'})}
+           if(sc>2400 && sc<=7000){$('.content2_beatsaber').css({'transfrom':'scale(0.3)'})}
+           if(sc<=2400 || sc>7800){$('.content2_rpg').css({'transform':'scale(0)'})}
+           if(sc>2400 && sc<=2800){$('.content2_rpg').css({'transform':'scale('+(sc-2400)*0.00083+')'})}
+           if(sc>2800 && sc<=7400){$('.content2_rpg').css({'transform':'scale(0.33)'})}
+           if(sc<=2800 || sc>8200){$('.content2_starwars').css({'transform':'scale(0)'})}
+           if(sc>2800 && sc<=3200){$('.content2_starwars').css({'transform':'scale('+(sc-2800)*0.001125+')'})}
+           if(sc>3200 && sc<=7800){$('.content2_starwars').css({'transform':'0.45'})}
+           if(sc<=3200 || sc>8600){$('.content2_starwars2').css({'transform':'scale(0)'})}
+           if(sc>3200 && sc<=3600){$('.content2_starwars2').css({'transform':'scale('+(sc-3200)*0.000625+')'})}
+           if(sc>3600 && sc<=8200){$('.content2_starwars2').css({'transform':'scale(0.25)'})}
+           if(sc<=3600 || sc>9000){$('.content2_combine').css({'transform':'scale(0)'})}
+           if(sc>3600 & sc<=4000){$('.content2_combine').css({'transform':'scale('+(sc-3600)*0.0005+')'})}
+           if(sc>4000 && sc<=8600){$('.content2_combine').css({'transform':'scale(0.2)'})}
+           if(sc<=4000 || sc>9400){$('.content2_vr').css({'transform':'scale(0)'})}
+           if(sc>4000 && sc<=4400){$('.content2_vr').css({'transform':'scale('+(sc-4000)*0.000512+')'})}
+           if(sc>4400 && sc<=9000){$('.content2_vr').css({'transform':'scale(0.26)'})}
            if(sc<=4400){$('.iphone_box').css({'transform':'scale(0)'})}
-           if(sc>4400 && sc<4800){$('.iphone_box').css({'transform':'scale('+(sc-4400)*0.000625+')'})}
+           if(sc>4400 && sc<=4800){$('.iphone_box').css({'transform':'scale('+(sc-4400)*0.000625+')'})}
+           if(sc>4800 && sc<=9400){$('.iphone_box').css({'transfomr':'scale(0.25)'})}
            if(sc>5000 && sc<5699){$('.content2_p').css({'opacity':'1'})}
            if(sc>=5700 || sc<=5000){$('.content2_p').css({'opacity':'0'})}
            if(sc>6200 &&  sc<=6600){$('.content2_climb').css({'transform':'scale('+(0.5-(sc-6200)*0.00125)+')','opacity':100-(sc-6200)})}
@@ -110,6 +119,7 @@
            if(sc>5000 && sc<9800){$('.iphone_box').css({'transform':'scale(0.25)'})}
            if(sc>9800 && sc<=12000){$('.iphone_box').css({'transform':'scale(1.1)',});
            }
+           if(sc>12000 && sc<=13500){$('.iphone_box').css({'transform':'scale(1.1)'})}
            if(sc<11000){$('.horizon').css({'border-radius':'0px'})}
            if(sc<9800){s1.pause();
             $('.blur_2px').css({'width':'0%'})
@@ -151,7 +161,8 @@
            if(sc>13500 && sc<=14500){$('.iphone_box').css({'transform':'scale('+(1.1-(sc-13500)*0.000625)+')'});
     
            }
-           if(sc>14500 && sc<15200){$('.iphone_box').css({'transform':'scale('+(0.575-(sc-14500)*0.000625)+')'})}
+           if(sc>14500 && sc<=15200){$('.iphone_box').css({'transform':'scale('+(0.575-(sc-14500)*0.000625)+')'})}
+           if(sc>15200){$('.iphone_box').css({'transform':'scale(0.1375)'})}
            if(sc<=15500){$('.ipad_box').css({'left':'-30%'})}
            if(sc>15500 && sc<=16000){$('.ipad_box').css({'left':((sc-15500)*0.11)-30+'%'})}
            if(sc>16000 && sc<16500){$('.content2_p_mirror').css({'opacity':1-(sc*0.02)})}
@@ -169,9 +180,12 @@
         if(sc<20000){$('.iphone').css({'transform':'rotate(270deg)'});
         $('.horizon').css({'transform':'rotate(0deg)'})
     }
-        if(sc>20000 && sc<20500){$('.iphone').css({'transform':'rotate(360deg)'});
+        if(sc>20000 && sc<=20500){$('.iphone').css({'transform':'rotate(360deg)'});
         $('.horizon').css({'transform':'rotate(90deg)'})
     }
+    if(sc>20500){$('.iphone').css({'transform':'rotate(360deg)'});
+    $('.horizon').css({'transform':'rotate(90deg)'})
+}
     if(sc<21000){$('.horizon').css({'opacity':'1'})}
     if(sc<=20500){$('.oculus_app_login').css({'opacity':'0'})}
     if(sc>20500 && sc<=21000){$('.oculus_app_login').css({'opacity':(sc-20500)*0.002})}
@@ -211,6 +225,9 @@ if(sc>27000 && sc<=27500){$('.oculus_charge').css({'opacity':1-((sc-27000)*0.002
 if(sc>20000 && sc<=27500){$('.content2').css({'background-color':'#fff'})}
 if(sc>27500 && sc<=28500){$('.content2').css({'background-color':'rgba('+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+')'})}
 if(sc>28500){$('.content2').css({'background-color':'#000'})}
+if(sc<=29000){$('.oculus_logo').css({'opacity':'0'})}
+if(sc>29000 && sc<=29500){$('.oculus_logo').css({'opacity':(sc-29000)*0.002})}
+if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
 // if(sc>24000){$('.oculus_device').css({'opacity':'0'})}
     // if(sc>24000 && sc<=24500){$('.oculus_charge').css({'opacity':1-(sc-24000)*0.002})}
        })
@@ -241,7 +258,7 @@ if(sc>28500){$('.content2').css({'background-color':'#000'})}
         .slide_text_box>h2{font-size: 30px;}
         .slide_text_box>h3{margin-top: 10px; font-size: 90px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 400;}
         .slide_text_box>p{font-size: 36px; margin-top: 20px;}
-        button{background-color: #181ef9; color: #fff; font-size: 16px; width: 130px; height: 43px; border-radius: 50px; border: none; margin-top: 20px; margin-right: 16px; cursor: pointer;}
+        .slide button{background-color: #181ef9; color: #fff; font-size: 16px; width: 130px; height: 43px; border-radius: 50px; border: none; margin-top: 20px; margin-right: 16px; cursor: pointer;}
         .mouse{width: 22px; height: 32px; border-radius: 30px; border: 2px solid #fff; box-sizing: border-box; position: absolute; bottom: 80px; left: 0; right: 0; margin: auto;}
         .mouse>p{position: absolute; top: -25px; right: -6px; color: #fff; font-size: 14px; font-weight: 700;}
         .mouse_wheel{width: 4px; height: 4px; background-color: #fff; border-radius: 5px; position: absolute; right:0; left: 0; top: 5px; margin: auto;}
@@ -310,6 +327,19 @@ if(sc>28500){$('.content2').css({'background-color':'#000'})}
        .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
        .content2_p_app{position: fixed; top: 50%; left: 100px; color: #000; font-size: 30px; transition: 1s; opacity: 0;}
        .oculus_charge{position: fixed; width: 100%; height: 100%; left: 0; top: 0; z-index: 99999; opacity: 0; transition: 1s;}
+       .oculus_guardian_logo{ width: 300px; margin-top: 100px; border: 1px solid #fff;}
+       .oculus_guardian_p_box{float: left; text-align: left; margin-left: 100px;}
+       .oculus_guardian_h5{font-size: 30px;}
+       .oculus_logo{position: fixed; left: 0; right: 0; top: 0; bottom: 0; color: #fff; text-align: center; width: 100%; height: 100%; z-index: 999999; opacity: 0;}
+       .oculus_guardian_p1{font-size: 24px;}
+       .oculus_guardian_p2{margin-top: 20px; font-size: 16px;}
+       .oculus_guardian_button{ background-color: transparent; border: 2px solid #fff; border-radius: 20px; padding: 10px 15px; font-size: 12px; margin-top: 50px; color: #fff; font-weight: 100;}
+       .oculus_guardian_img{position: fixed; width: 400px; right: 100px; top: 100px; background-color: blue;}
+       .oculus_guardian_img>li{width: 100%; position: absolute;}
+       .oculus_guardian_img>li:nth-child(1){top: 0; right: 0;}
+       .oculus_guardian_img>li:nth-child(2){top: 200px; right: 100px;}
+       .oculus_guardian_img>li:nth-child(3){top: 400px; right: 00px;}
+       .oculus_guardian_img>li>img{width: 100%; vertical-align: top; }
     </style>
     <style>
          /*미디어쿼리*/
@@ -464,6 +494,22 @@ if(sc>28500){$('.content2').css({'background-color':'#000'})}
         <p class="horizon_90hz">90hz</p>
         <p class="horizon_72hz">72hz</p>
         </div>
+    <div class="oculus_logo">
+        <img src="Oculus-Logo2_white.png" alt="" class="oculus_guardian_logo">
+        <h5 class="oculus_guardian_h5">Guardian</h5>
+        <div class="oculus_guardian_p_box">
+            <p class="oculus_guardian_p1">oculus Guardian은 <br> vr플레이 공간의 가장자리에 <br> 너무 가까워지면 표시되는 경계를 <br> 설정할 수 있는 내장된 안전 기능입니다.</p>
+            <p class="oculus_guardian_p2">최대 15미터의 공간에서 안전하고 자유롭게 <br> 플레이가 가능합니다. </p>
+            <button class="oculus_guardian_button">oculus Guardian 더 알아보기</button>
+        </div>
+        
+        
+        <ul class="oculus_guardian_img">
+            <li><img src="oculus_guardian1.jpg" alt=""></li>
+            <li><img src="oculus_guardian2.png" alt=""></li>
+            <li><img src="oculus_guardian3.jpg" alt=""></li>
+        </ul>
+    </div>
 <!-- <img src="oculus_app_login.png" alt="" class="oculus_app_login"> -->
         
     <div class="sc"><h5>0</h5></div>
