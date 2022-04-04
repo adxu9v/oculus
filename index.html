@@ -164,11 +164,17 @@
            }
            if(sc>14500 && sc<=15200){$('.iphone_box').css({'transform':'scale('+(0.575-(sc-14500)*0.000625)+')'})}
            if(sc>15200){$('.iphone_box').css({'transform':'scale(0.1375)'})}
-           if(sc<=15500){$('.ipad_box').css({'left':'-30%'})}
-           if(sc>15500 && sc<=16000){$('.ipad_box').css({'left':((sc-15500)*0.11)-30+'%'})}
+           if(sc<=15500){$('.ipad_box').css({'left':'-30%'});
+           $('.mac_box').css({'right':'-40%'})
+           }
+           if(sc>15500 && sc<=16000){$('.ipad_box').css({'left':((sc-15500)*0.11)-30+'%'});
+           $('.mac_box').css({'right':((sc-15500)*0.1)-40})
+           }
            if(sc>16000 && sc<=16500){$('.content2_p_mirror').css({'opacity':1-((sc-15500)*0.002)})}
            if(sc>16500 && sc<=17000){$('.content2_p_mirror').css({'opacity':(sc-16500)*0.002})}
-           if(sc>16000 && sc<=18000){$('.ipad_box').css({'left':'25%'})}
+           if(sc>16000 && sc<=18000){$('.ipad_box').css({'left':'25%'});
+           $('.mac_box').css({'right':'10%'})
+           }
            if(sc<17000 || sc>18500){$('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':'0'});
         }
            if(sc>17000 & sc<=18000){$('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':(sc-17000)*0.002});
@@ -177,10 +183,13 @@
         }
            if(sc>18000 && sc<=18500){$('.content2_p_mirror').css({'opacity':1-((sc-18000)*0.002)});
            $('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':1-((sc-18000)*0.002)});
-           $('.ipad_box').css({'left':(25-(sc-18000)*0.15)+'%'})
+           $('.ipad_box').css({'left':(25-(sc-18000)*0.15)+'%'});
+           $('.mac_box').css({'right':(10-(sc-18000)*0.1)+'%'})
         }
         if(sc>18500){$('.content2_p_mirror,.content2_p_mirror2,.content2_p_mirror3').css({'opacity':'0'})}
-        if(sc>18500){$('.ipad_box').css({'left':'-30%'})}
+        if(sc>18500){$('.ipad_box').css({'left':'-30%'});
+        $('.mac_box').css({'right':'-40%'})
+        }
         if(sc<19000){$('.content2').css({'background-color':'#000'})}
         if(sc>19000 && sc<=20000){$('.content2').css({'background-color':'rgba('+(sc-19000)*0.255+','+(sc-19000)*0.255+','+(sc-19000)*0.255+')'})
     }    
@@ -197,12 +206,17 @@
     if(sc<21000){$('.horizon').css({'opacity':'1'})}
     if(sc<=20500){$('.oculus_app_login').css({'opacity':'0'})}
     if(sc>20500 && sc<=21000){$('.oculus_app_login').css({'opacity':(sc-20500)*0.002})}
-    if(sc<=21000){ $('.oculus_device').css({'opacity':'0'})}
+    if(sc<=21000){ $('.oculus_device').css({'opacity':'0'});
+    $('.oculus_device_right').css({'opacity':'0'})
+    }
     if(sc>21000 && sc<=21500){$('.iphone_box').css({'left':(50-(sc-21000)*0.015)+'%'});
         $('.oculus_device').css({'opacity':((sc-21000)*0.02)});
+        $('.oculus_device_right').css({'opacity':(sc-21000)*0.02})
         $('.horizon').css({'opacity':(1-(sc-21000)*0.02)});
         }
-        if(sc>21500){$('.oculus_device').css({'opacity':'1'})}
+        if(sc>21500){$('.oculus_device').css({'opacity':'1'});
+        $('.oculus_device_right').css({'opacity':'1'})
+        }
         if(sc>21500 && sc<23500){$('.iphone_box').css({'left':'42.5%'})}
         if(sc>21000 && sc<=22500){$('.oculus_app_login').css({'opacity':'1'})}
         if(sc<=22500){$('.oculus_app_device2').css({'opacity':'0'})}
@@ -216,16 +230,23 @@
     if(sc<22500){$('.content2_p_app').css({'opacity':'0'})}
     if(sc<=23000){$('.iphone_box').css({'opacity':'1'});
     $('.oculus_device').css({'left':'20%'})
+    $('.oculus_device_right').css({'right':'5%'})
     }
     if(sc>23000 && sc<=23500){$('.content2_p_app').css({'opacity':1-(sc-23000)*0.002})
     $('.iphone_box').css({'opacity':1-(sc-23000)*0.002});
-    $('.oculus_device').css({'left':20-((sc-23000)*0.0425)+'%'})
+    $('.oculus_device').css({'left':20-((sc-23000)*0.02)+'%'});
+    $('.oculus_device_right').css({'right':5+((sc-23000)*0.02)+'%'})
     }
     if(sc>23500){$('.content2_p_app').css({'opacity':'0'});
     $('.iphone_box').css({'opacity':'0'});
-    $('.oculus_device').css({'left':'-1.25%'})
+    $('.oculus_device').css({'left':'-1%'});
+    $('.oculus_device_right').css({'right':'25%'})
+    if(sc<24000){$('.oculus_device_right').css({'opacity':'1'})}
 }
-if(sc>24000 && sc <=24500){$('.oculus_device').css({'transform':'scale('+(0.7+((sc-24000)*0.0005)) +')'})}
+if(sc>24000 && sc <=24500){$('.oculus_device').css({'transform':'scale('+(0.7+((sc-24000)*0.00025)) +')'});
+$('.oculus_device_right').css({'opacity':1-(sc-24000)*0.02})
+}
+if(sc>24500){$('.oculus_device_right').css({'opacity':'0'})}
     if(sc<24500 || sc>27500){$('.oculus_charge').css({'opacity':'0'})}
     if(sc>24500 && sc<=25000){$('.oculus_charge').css({'opacity':((sc-24500)*0.002)})}
     if(sc>24500 && sc<=25000){
@@ -260,7 +281,7 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         .logo{width: 100%;}
         .menu{float: right; width: 30px; height: 100%; margin-top: 20px; cursor: pointer;}
         .menu>li{width: 30px; height: 2px; margin: 6px 0; border-radius: 3px; background-color: #fff; transition: 0.3s;}
-        .slide_box{width: 100%; height: 100%; position: relative; left: 0; top: 0; background-color: black; overflow: hidden; z-index: 9;}
+        .slide_box{width: 100%; height: 100%; position: relative; left: 0; top: 0; background-color: black; overflow: hidden; z-index: 9999999999999999999;}
         .slide_box::after{content: ""; display: block; clear: both;}
         .slide{position: absolute; left: 0; top: 0; width: 300%; }
         .slide>li{width: 33.3333%; float: left; background-color: #000; position: relative;}
@@ -330,17 +351,24 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         .iphone{transform:  rotate(270deg); width: 1650px; height: 2050px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
         .horizon{border-radius: none; transition: 1s;}
         .oculus_app_login{ width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
-        .ipad_box{position: fixed; left: -30%; top: 25%; width: 500px; height: 300px;background-color: black; z-index: 99; opacity: 1; transition: 1s;}
+        .mac_box{position: fixed; right: -40%; top: 25%; width: 600px; height: 300px;z-index: 99; opacity: 1; transition: 1s;}
+        .mac{width: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
+        .mac_box>video{width: 100%;  position: absolute; left: 0; top: 0;
+        bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.78);}
+        .mac_bg{width: 450px; height: 300px; background-color: #000; position: absolute; left: 0; top: 0; bottom: 0; right: 0; margin: auto; z-index: -2;}
+        .ipad_box{position: fixed; left: -30%; top: 25%; width: 500px; height: 300px;z-index: 99; opacity: 1; transition: 1s;}
         .ipad{width: 100%; position: absolute; left: 0; top: 0; bottom: 0; right: 0;  margin: auto;}
         .ipad_box>video{width: 100%; position: absolute; left: 0; top: 0;
              bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85);}
+             .ipad_bg{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background-color: #000; width: 400px; height: 300px; z-index: -2;}
        .content2_p_mirror{position: fixed; left: 50%; top: 10%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s;}
        .content2_p_mirror2{position: fixed; left: 35%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
        .content2_p_mirror3{position: fixed; left: 65%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
        .content2>.content2_box>.oculus_device{position: fixed; left: 20%; top: 0; right: 0; bottom: 0; margin: auto; transform: scale(0.7); opacity: 0;}
+       .content2>.content2_box>.oculus_device_right{position: fixed;  top: 10%; right: 5%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(30deg); opacity: 0;}
        .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
        .content2_p_app{position: fixed; top: 50%; left: 100px; color: #000; font-size: 30px; transition: 1s; opacity: 0;}
-       .oculus_charge{position: fixed; width: 100%; height: 100%; left: 0; top: 0; z-index: 99999; opacity: 0; transition: 1s;}
+       .oculus_charge{position: fixed; height: 100vh; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 99999; opacity: 0; transition: 1s;}
        .oculus_guardian_logo{ width: 300px; margin-top: 100px;}
        .oculus_guardian_p_box{float: left; text-align: left; margin-left: 100px;}
        .oculus_guardian_h5{font-size: 30px;}
@@ -466,7 +494,12 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         <div class="ipad_box">
             <img src="ipad.png" alt="" class="ipad">
             <video src="horizon_20s.mp4" muted loop autoplay></video>
-            
+            <div class="ipad_bg"></div>
+        </div>
+        <div class="mac_box">
+            <img src="macbook.png" alt="" class="mac">
+            <video src="horizon_20s.mp4" muted loop autoplay></video>
+            <div class="mac_bg"></div>
         </div>
         <div class="iphone_box">
             <img src="iphone.png" alt="" class="iphone">
@@ -476,6 +509,7 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
             <img src="oculus_app_device2.png" alt="" class="oculus_app_device2">
         </div>
         <img src="oculus_device_resize.png" alt="" class="oculus_device">
+        <img src="oculus_device_resize_right.png" alt="" class="oculus_device_right">
         <div class="content2_p">
             <p>오큘러스에서만 경험할 수 있는 <br>
                 수천개가 넘어가는 어플들을 <br>
@@ -505,8 +539,10 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
            
         </div>
         <div class="content2_p_app">
-            <p>오큘러스 스토어에서 <br>
-               결제, 기기 관리 가능</p>
+            <p>이제는 오큘러스 스토어에서 <br>
+               결제, 기기 관리, 친구와의 채팅이 가능합니다 <br>
+            지금 바로 새로운 오큘러스 스토어에 로그인 하세요</p>
+            <p>구글, 페이스북, 애플 계정 연동 가능</p>
         </div>
         <div class="blur_2px">
         </div>
