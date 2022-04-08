@@ -260,9 +260,18 @@ if(sc>27500 && sc<=28500){$('.content2').css({'background-color':'rgba('+(255-((
 if(sc>28500){$('.content2').css({'background-color':'#000'})}
 if(sc<=29000){$('.oculus_logo').css({'opacity':'0'})}
 if(sc>29000 && sc<=29500){$('.oculus_logo').css({'opacity':(sc-29000)*0.002})}
-if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
+if(sc>29500 && sc<=32000){$('.oculus_logo').css({'opacity':'1'})}
+if(sc>32000){$('.oculus_logo').css({'opacity':'0'})}
+if(sc<=32000){$('.companys').css({'opacity':'0'})}
+if(sc>33000){$('.companys').css({'opacity':'1'})}
 // if(sc>24000){$('.oculus_device').css({'opacity':'0'})}
     // if(sc>24000 && sc<=24500){$('.oculus_charge').css({'opacity':1-(sc-24000)*0.002})}
+$('.companys_list>li').mouseenter(function(){
+$(this).css({'opacity':'1'});
+})
+$('.companys_list>li').mouseleave(function(){
+$(this).css({'opacity':'0.7'});
+})
        })
     </script>
     <style>
@@ -271,7 +280,7 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         <!-- lts 아이콘 크기 키우고 간격 줄이기 -->
     <style>
         *{padding: 0; margin: 0; list-style: none; font-family: 'Nanum Gothic', sans-serif; }
-        .sc{position: fixed; padding: 10px; left: 0; top: 0; font-size: 30px; color: #000; z-index: 9999; background-color: #fff;}
+        .sc{position: fixed; padding: 10px; left: 0; top: 0; font-size: 30px; color: #000; z-index: 999999999999; background-color: #fff;}
         body,html{height: 100%;}
         body{ overflow-X: hidden;}
         header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0; margin: auto; z-index: 999;}
@@ -326,7 +335,7 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         .content1>h2{text-align: center; line-height: 100px; font-size: 50px; color: #fff; position: fixed; left: 0; top: 50%; margin-top: 20px; transform: translateY(-50%); width: 100%; z-index: 9999; }
         .content1>video{opacity: 0.8; position: relative; left: 0; top: 0;}
         /* sub시작 */
-        .content2{width: 100%; height: 30000px; background-color: rgba(0, 0, 0, 1); position: relative; z-index: 2;}
+        .content2{width: 100%; height: 34000px; background-color: rgba(0, 0, 0, 1); position: relative; z-index: 2;}
         .content2_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;    }
         .content2_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;  transition: 0.3s;}
         /* content2_climb 0.5 content2_0x0 0.3 content2_beatsaber 0.3 content2_rpg 0.33 content2_starwars 0.45 content2_starwars2 0.25 content2_combine 0.2 content2_vr 0.26 horizon_img 0.15*/
@@ -348,7 +357,8 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         .horizon_hz_box{position: fixed; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 100000; font-size: 40px; }
         .horizon_90hz{position: absolute; left: 0; top: 0; color: #fff; margin: 10px; opacity: 0; transition: 1s;}
         .horizon_72hz{position: absolute; right: 0; top: 0; color: #fff; margin: 10px; opacity: 0; transition: 1s;}
-        .iphone{transform:  rotate(270deg); width: 1650px; height: 2050px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
+        .iphone{transform:  rotate(270deg); width: 1600px; height: 2040px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
+        /* .iphone_box>.iphone_bg{position: fixed;  left: 0px; top: 0px; background-color: #000; } */
         .horizon{border-radius: none; transition: 1s;}
         .oculus_app_login{ width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
         .mac_box{position: fixed; right: -40%; top: 25%; width: 600px; height: 300px;z-index: 99; opacity: 1; transition: 1s;}
@@ -362,8 +372,8 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
              bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85);}
              .ipad_bg{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background-color: #000; width: 400px; height: 300px; z-index: -2;}
        .content2_p_mirror{position: fixed; left: 50%; top: 10%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s;}
-       .content2_p_mirror2{position: fixed; left: 35%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
-       .content2_p_mirror3{position: fixed; left: 65%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
+       .content2_p_mirror2{position: fixed; left: 40%; bottom: 35%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
+       .content2_p_mirror3{position: fixed; left: 75%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 12px;}
        .content2>.content2_box>.oculus_device{position: fixed; left: 20%; top: 0; right: 0; bottom: 0; margin: auto; transform: scale(0.7); opacity: 0;}
        .content2>.content2_box>.oculus_device_right{position: fixed;  top: 10%; right: 5%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(30deg); opacity: 0;}
        .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
@@ -381,7 +391,20 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
        .oculus_guardian_img>li:nth-child(1){top: 0; right: 0;}
        .oculus_guardian_img>li:nth-child(2){top: 200px; right: 100px;}
        .oculus_guardian_img>li:nth-child(3){top: 400px; right: 00px;}
-       .oculus_guardian_img>li>img{width: 100%; vertical-align: top; }
+       .oculus_guardian_img>li>img{width: 100%; vertical-align: top;}
+       .companys{position: fixed; left: 0; right: 0; bottom: 0; margin: auto; width: 100%; height: 70%; z-index: 999999;}
+       .companys>h2{font-size: 40px; text-align: center; position: fixed; left: 0; top: 100px; right: 0; margin: auto;  color: #fff;}
+       .companys_list{width: 100%; height: 100%; }
+       .companys_list>li{width: 20%; margin-right: 0%; height: 25%; border: 1px solid #fff; box-sizing: border-box; float: left; opacity: 0.7; transition: 0.3s; position: relative;  padding: 70px; box-sizing: border-box;}
+       .companys_list>li:nth-child(5n){margin-right: 0;}
+       .companys_list>li:nth-child(5)>img{height: 150%; width: 40%; transform: translateX(70%) translateY(-30%);}
+       .companys_list>li>img{width: 100%; height: 100%;}
+       .content3{position: absolute; width: 100%; height: 10000px; background-color: #fff; z-index: 99999999;}
+       .content3_service_box{margin-top: 50px;}
+       .content3_service_box>h2{text-align: center;}
+       .content3_service_list{ width: 1000px; height: 1000px; margin: auto; margin-top: 20px;}
+       .content3_service_list::after{content: ""; clear: both; display: block;}
+       .content3_service_list>li{float: left; width: 50%; height: 50%; border: 1px solid #000; box-sizing: border-box; text-align: center; line-height: 500px;}
     </style>
     <style>
          /*미디어쿼리*/
@@ -502,6 +525,7 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
             <div class="mac_bg"></div>
         </div>
         <div class="iphone_box">
+            <div class="iphone_bg"></div>
             <img src="iphone.png" alt="" class="iphone">
             <video src="horizon_20s.mp4" muted loop class="horizon">
             </video>
@@ -520,11 +544,16 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
                 미러링으로 다같이 즐겨요</p> 
         </div>
         <div class="content2_p_mirror2">
-            <p>오큘러스의 미러링은 스마트폰, 태블릿, pc, tv등<br> 다양한 기기에서 지원을 합니다
+            <p>미러링 기능을 사용하면 VR에서 보이는 내용을 주변 사람들과 공유할 수 있습니다. <br> 컴퓨터, 휴대폰, 지원되는 Chromecast 기기 또는 TV로 미러링할 수 있습니다.
                </p> 
         </div>
         <div class="content2_p_mirror3">
-            <p>오큘러스의 미러링은 스마트폰, 태블릿, pc, tv등<br> 다양한 기기에서 지원을 합니다
+            <p>오큘러스의 미러링은 quest2 이외에도 quest1, go에서도 사용이 가능합니다. <br>
+
+Chromecast 또는 기타 스마트 기능이 내장된 TV가 지원될 수 있지만 모든 모델과의 호환성이 보장되지는 않습니다. <br>
+미러링과 녹화를 동시에 진행할 경우 문제가 발생할 수 있습니다. <br>
+Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습니다. <br>
+미러링으로 배터리 사용량이 증가하거나 앱 내 성능이 저하될 수 있습니다.
                </p> 
         </div>
         
@@ -542,7 +571,9 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
             <p>이제는 오큘러스 스토어에서 <br>
                결제, 기기 관리, 친구와의 채팅이 가능합니다 <br>
             지금 바로 새로운 오큘러스 스토어에 로그인 하세요</p>
-            <p>구글, 페이스북, 애플 계정 연동 가능</p>
+            <p>구글, 페이스북, 애플 계정 연동 가능 <br>
+                다양한 최신 인기 게임들을 할인된 가격에 만나보세요
+            </p>
         </div>
         <div class="blur_2px">
         </div>
@@ -569,7 +600,39 @@ if(sc>29500){$('.oculus_logo').css({'opacity':'1'})}
         </ul>
     </div>
 <!-- <img src="oculus_app_login.png" alt="" class="oculus_app_login"> -->
-        
+        <div class="companys">
+            <h2>Our Customers & Partners</h2>
+            <ul class="companys_list">
+                <li><img src="company_logos/Kia_Logo_white.png" alt=""></li>
+                <li><img src="company_logos/audi_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Meta_Logo_white.png" alt=""></li>
+                <li><img src="company_logos/Sony_logo_white.png" alt=""></li>
+                <li><img src="company_logos/apple_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Tesla_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Google_logo_white.png" alt=""></li>
+                <li><img src="company_logos/hyundai_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Samsung_Logo_white.png" alt=""></li>
+                <li><img src="company_logos/twitter_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Nintendo_Logo_white.png" alt=""></li>
+                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
+                <li><img src="company_logos/PlayStation_logo_white.png" alt=""></li>
+                <li><img src="company_logos/National_Geographic_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Mercedes-Benz_Logo_white.png" alt=""></li>
+                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
+                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
+            </ul>
+        </div>
+<div class="content3">
+    <div class="content3_service_box">
+        <h2>our service</h2>
+        <ul class="content3_service_list">
+            <li>game</li>
+            <li>health</li>
+            <li>work</li>
+            <li>video</li>
+        </ul></div>
+    
+</div>
     <div class="sc"><h5>0</h5></div>
 </body>
 </html>
