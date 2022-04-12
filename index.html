@@ -75,12 +75,14 @@
         })
         let sc = 0;
        $(window).scroll(function(){
+       
         let s1 = $('.horizon').get(0)
         let xr2Play = $('.xr2').get(0)
         let oculusPlay = $('.oculus_charge').get(0)
            sc = $(this).scrollTop()
            ss =$('.slide').height()
            $('.sc>h5').text(sc)
+           
            if(sc<=1200 || sc>6600){$('.content2_climb').css({'transform':'scale(0)','opacity':'0'})}
            if(sc>1200 && sc <=1600){$('.content2_climb').css({'transform':'scale('+(sc-1200)*0.00125+')','opacity':'1'})}
            if(sc>1600 && sc<=6200){$('.content2_climb').css({'transform':'scale(0.5)','opacity':'1'})}
@@ -283,9 +285,12 @@ $('.xr2_box').css({'opacity':(sc-27500)*0.002})
 }
 if(sc<=28000 || sc>30000){xr2Play.pause()}
 if(sc>28000 && sc<=30500){$('.xr2_box').css({'opacity':'1'});
-xr2Play.play()
+
 }
-if(sc<=30000){$('.comparison_box').css({'opacity':'0'})}
+if(sc<=30000){$('.comparison_box').css({'opacity':'0'});
+$('.xr2_images').attr('src','xr2_images/1.jpg')
+}
+if(sc>30000){$('.xr2_images').attr('src','xr2_images/100.jpg')}
 // if(sc>30000 && sc<=30500){$('.xr2_box').css({'opacity':1-((sc-30000)*0.002)});
 // $('.comparison_box').css({'opacity':((sc-30000)*0.002)})
 // }
@@ -474,6 +479,7 @@ $('.comparison_list>h2').click(function(){
        .xr2_2_left_box_p1{opacity: 1; top: 45%;}
        .xr2_2_right_box{float: right; width: 50vw; height: 100vh;}
        .content4{width: 100%; height: 2000px; position: relative; background-color: #ddd; z-index: 99999999999;}
+       .xr2_images{position: fixed; left: 0; top: 0; width: 100%; z-index: 99999999999; height: 100%;}
     </style>
     <style>
          /*미디어쿼리*/
@@ -647,8 +653,9 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
         </div>
         <div class="blur_2px">
         </div>
-        <video src="oculus_charge_video.mp4" alt="" muted class="oculus_charge"></video>
-        <div class="charge_effect"></div>
+        <!-- <video src="oculus_charge_video.mp4" alt="" muted class="oculus_charge"></video> -->
+        <img src="oculus_charge_images/1.001.jpeg" alt="" class="oculus_charge_images">
+        
     </div>
     <div class="horizon_hz_box">
         <p class="horizon_90hz">120hz</p>
@@ -670,10 +677,13 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
             <li><img src="oculus_guardian3.jpg" alt=""></li>
         </ul>
     </div> -->
+    <!--24476f -->
     <div class="xr2_box">
-        <video src="spandragon_xr2_clip.mp4" muted  class="xr2"></video>
+        <img src="xr2_images/1.jpg" alt="" class="xr2_images">
+        <!-- <video src="spandragon_xr2_clip.mp4" muted  class="xr2"></video> -->
         <p class="xr2_p">프로에 걸맞은 프로급 파워. <br>
-            XR2는 세상에서 가장 빠른 vr 칩입니다.</p>
+            XR2는 세상에서 가장 빠른 vr 칩입니다.
+        </p>
     <!-- <p class="xr2_p">vr 전용 커스텀칩인 <span>XR2</span> 이 이제 oculus quest 2에 탑재됩니다. <br>
         이전 세대 대비 최대 <span>2.6배</span> 더 빠른 성능을 선사하여 <br> oculus quest 2는 강력한 퍼포먼스를 가진 vr기기로 만들어주죠. <br>
         어떤 앱이든 매끄럽게 플레이하고, <br> 고사양 그래픽 게임도 무리없이 즐길 수 있습니다. </p> -->
