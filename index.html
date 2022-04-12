@@ -74,14 +74,22 @@
             })
         })
         let sc = 0;
-       $(window).scroll(function(){
+        let scrollYPos = 0;
+        
        
+       $(window).scroll(function(){
+    //    let canvas = $('.sreen');
+    //    let ctx = canvas.getContext('2d');
+    scrollYPos = Math.round(sc-27000);
+    scrollYPos2 = Math.round(scrollYPos/10)
         let s1 = $('.horizon').get(0)
         let xr2Play = $('.xr2').get(0)
         let oculusPlay = $('.oculus_charge').get(0)
+        
            sc = $(this).scrollTop()
            ss =$('.slide').height()
            $('.sc>h5').text(sc)
+           $('.xr2_images').attr('src','xr2_images/'+scrollYPos2+'.jpg')
            
            if(sc<=1200 || sc>6600){$('.content2_climb').css({'transform':'scale(0)','opacity':'0'})}
            if(sc>1200 && sc <=1600){$('.content2_climb').css({'transform':'scale('+(sc-1200)*0.00125+')','opacity':'1'})}
@@ -199,7 +207,7 @@
         if(sc<19000){$('.content2').css({'background-color':'#000'})}
         if(sc>19000 && sc<=20000){$('.content2').css({'background-color':'rgba('+(sc-19000)*0.255+','+(sc-19000)*0.255+','+(sc-19000)*0.255+')'})
     }    
-    // if(sc>20000){$('.content2').css({'background':'#fff'})}
+    if(sc>20000){$('.content2').css({'background':'#fff'})}
         if(sc<20000){$('.iphone').css({'transform':'rotate(270deg)'});
         $('.horizon').css({'transform':'rotate(0deg)'})
     }
@@ -265,42 +273,37 @@ $('.oculus_device_left').css({'opacity':1-(sc-24000)*0.02})
 if(sc>24500){$('.oculus_device_right').css({'opacity':'0'});
 $('.oculus_device_left').css({'opacity':'0'});
 }
-    if(sc<24500 || sc>27500){$('.oculus_charge').css({'opacity':'0'})}
-    if(sc>24500 && sc<=25000){$('.oculus_charge').css({'opacity':((sc-24500)*0.002)})}
+    if(sc<24500 || sc>27500){$('.oculus_charge_images').css({'opacity':'0'})}
+    if(sc>24500 && sc<=25000){$('.oculus_charge_images').css({'opacity':((sc-24500)*0.002)})}
     if(sc>24500 && sc<=25000){
     $('.oculus_device').css({'opacity':1-((sc-24500)*0.002)})
 }
 if(sc>25000){$('.oculus_device').css({'opacity':'0'});
-oculusPlay.play()
 }
-if(sc>25000 && sc<27000){$('.oculus_charge').css({'opacity':'1'})}
+if(sc>25000 && sc<26000){$('.oculus_charge_images').css({'opacity':'1'})}
 // if(sc<=26000){$('.charge_effect').css({'transform':'scale(1)'})}
 // if(sc<=27500){$('.charge_effect').css({'opacity':'0'})}
 // if(sc>27500 && sc<=28500){$('.charge_effect').css({'transform':'scale('+(1+(sc-27500)*0.25)+')','opacity':'1'})}
 // if(sc>26000 && sc<=27000){$('.oculus_charge').css({'transform':'scale('+(1+((sc-26000)*0.001))+')','bottom':((sc-26000)*0.09)+'%'})}
 // if(sc>27000){$('.oculus_charge').css({'transform':'scale(2)','bottom':'90%'})}
-if(sc<=27500){$('.xr2_box').css({'opacity':'0'})}
-if(sc>27500 && sc<=28000){$('.oculus_charge').css({'opacity':1-((sc-27500)*0.002)});
-$('.xr2_box').css({'opacity':(sc-27500)*0.002})
+if(sc>25500 && sc<=26000){$('.oculus_charge_images').css({'opacity':1-((sc-25500)*0.002)});
 }
-if(sc<=28000 || sc>30000){xr2Play.pause()}
-if(sc>28000 && sc<=30500){$('.xr2_box').css({'opacity':'1'});
+if(sc>26000){$('.oculus_charge_images').css({'opacity':'0'})}
+if(sc<26500){$('.xr2_Tumb').css({'opacity':'0'})}
+if(sc>26500 && sc<=27000){$('.xr2_Tumb').css({'opacity':((sc-26500)*0.002)})}
 
-}
-if(sc<=30000){$('.comparison_box').css({'opacity':'0'});
-$('.xr2_images').attr('src','xr2_images/1.jpg')
-}
-if(sc>30000){$('.xr2_images').attr('src','xr2_images/100.jpg')}
 // if(sc>30000 && sc<=30500){$('.xr2_box').css({'opacity':1-((sc-30000)*0.002)});
-// $('.comparison_box').css({'opacity':((sc-30000)*0.002)})
-// }
-if(sc<=30500){$('.xr2_box').css({'position':'fixed','opacity':'1'})}
-if(sc>30500){
-$('.xr2_box').css({'opacity':'0'});
-}
+// if(sc<=30500){$('.xr2_box').css({'position':'fixed','opacity':'1'})}
 if(sc>20000 && sc<=27500){$('.content2').css({'background-color':'#fff'})}
 if(sc>27500 && sc<=28500){$('.content2').css({'background-color':'rgba('+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+')'})}
 if(sc>28500){$('.content2').css({'background-color':'#000'})}
+if(sc<26999){$('.xr2_images_box').css({'margin-top':'0px','position':'relative'});
+$('.xr2_images').attr('src','xr2_images/1.jpg')
+}
+if(sc>=27000 && sc<=28440){$('.xr2_images_box').css({'position':'fixed','margin-top':'0px'})}
+if(sc>28440){$('.xr2_images_box').css({'position':'relative','margin-top':'1440px'});
+$('.xr2_images').attr('src','xr2_images/144.jpg')
+}
 // if(sc<=29000){$('.oculus_logo').css({'opacity':'0'})}
 // if(sc>29000 && sc<=29500){$('.oculus_logo').css({'opacity':(sc-29000)*0.002})}
 // if(sc>29500 && sc<=32000){$('.oculus_logo').css({'opacity':'1'})}
@@ -411,7 +414,7 @@ $('.comparison_list>h2').click(function(){
         .content1>h2{text-align: center; line-height: 100px; font-size: 50px; color: #fff; position: fixed; left: 0; top: 50%; margin-top: 20px; transform: translateY(-50%); width: 100%; z-index: 9999; }
         .content1>video{opacity: 0.8; position: relative; left: 0; top: 0;}
         /* sub시작 */
-        .content2{width: 100%; height: 31000px; background-color: rgba(0, 0, 0, 1); position: relative; z-index: 2;}
+        .content2{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative; z-index: 2;}
         .content2_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
         .content2_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;  transition: 0.3s;}
         /* content2_climb 0.5 content2_0x0 0.3 content2_beatsaber 0.3 content2_rpg 0.33 content2_starwars 0.45 content2_starwars2 0.25 content2_combine 0.2 content2_vr 0.26 horizon_img 0.15*/
@@ -455,20 +458,28 @@ $('.comparison_list>h2').click(function(){
        .content2>.content2_box>.oculus_device_left{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(-30deg); opacity: 0; }
        .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
        .content2_p_app{position: fixed; top: 50%; left: 100px; color: #000; font-size: 30px; transition: 1s; opacity: 0;}
-       .oculus_charge{position: fixed; height: 100vh; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 99999; opacity: 0; transition: 1s; transform: scale(1);}
+       .oculus_charge_images{position: fixed; height: 100vh; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 99999; opacity: 0; transition: 1s; transform: scale(1);}
        .content3{position: relative; width: 100%; height: 5500px; background-color: red;}
        .content3_service_box{width: 100%; height: auto; background-color: blue;}
        .content3_service_box::after{content: ""; display: block; clear: both;}
-       .xr2_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; margin: auto; width: 100%; height: 100%; z-index: 999999; opacity: 1;}
-       .xr2{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; width: 100%;}
-       .xr2_p{position: fixed; left: 20%; top: 75%; color: #fff; font-size: 20px; font-weight: 700; z-index: 99999999;}
+       .xr2_box{position: relative; width: 100%; height: 4000px; z-index: 999999; opacity: 1; background-color: #24476f; overflow: hidden;}
+       .xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0; z-index: 999999999; box-sizing: border-box;}
+       .xr2_images{position: absolute; left: 0; top: 0; width: 100vw; z-index: 99999999999; height: 100vh; margin-top: 0; box-sizing: border-box;}
+       .xr2_content_box{width: 80%; height: 100%; margin: auto; margin-top: 100px; text-align: center;}
+       .xr2_p{color: #fff; font-size: 40px; margin-top: 100px; font-weight: 700; z-index: 99999999; float: left;}
        .xr2_p>span{color: rgb(255, 61, 61); font-weight: 900; font-size: 22px;}
+       .xr2_comparison{width: 600px; height: 800px; float: right;}
+       .xr2_comparison>li{width: 100%; height: 25%; text-align: left; line-height: 100px; }
+       .xr2_comparison>li>h5{text-align: center; margin-top: 10px; line-height: 0px;}
+       .xr2_content_box2{width: 100%; border: 1px solid #000; box-sizing: border-box;}
+       .xr2_content_bottom{width: 100%; height: 600px; background-color: #aaa; float: left; margin-top: 50px; position: relative; overflow: hidden;}
+       .xr2_content_bottom>img{position: absolute; right: 50%; top: -10%; width: 80%;}
+       .chart{float: right; border: 1px solid #000; width: 80%; height: 10px; line-height: 100px; margin-top: 50px;}
        .oculus_sound{width: 100%;}
        .oculus_sound_p{margin: 100px; font-size: 40px;}
        .oculus_sound_img1{width: 60%; float: left; margin-left: 5%; margin-bottom: 100px;}
        .oculus_sound_img2{width: 33%; float: right;}
        .oculus_sound_img1_box_p{float: right; margin-top: 50px; width: 30%; font-size: 26px; margin-right: 3%; opacity: 0;}
-       .xr2_box{width: 100%; height: 1000px;}
        .xr2_box::after{content:""; clear: both; display: block;}
        .xr2_2_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0; z-index: 999999999999999;}
        .xr2_2_box::after{content: ""; display: block; clear: both;}
@@ -479,7 +490,6 @@ $('.comparison_list>h2').click(function(){
        .xr2_2_left_box_p1{opacity: 1; top: 45%;}
        .xr2_2_right_box{float: right; width: 50vw; height: 100vh;}
        .content4{width: 100%; height: 2000px; position: relative; background-color: #ddd; z-index: 99999999999;}
-       .xr2_images{position: fixed; left: 0; top: 0; width: 100%; z-index: 99999999999; height: 100%;}
     </style>
     <style>
          /*미디어쿼리*/
@@ -655,7 +665,6 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
         </div>
         <!-- <video src="oculus_charge_video.mp4" alt="" muted class="oculus_charge"></video> -->
         <img src="oculus_charge_images/1.001.jpeg" alt="" class="oculus_charge_images">
-        
     </div>
     <div class="horizon_hz_box">
         <p class="horizon_90hz">120hz</p>
@@ -678,16 +687,8 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
         </ul>
     </div> -->
     <!--24476f -->
-    <div class="xr2_box">
-        <img src="xr2_images/1.jpg" alt="" class="xr2_images">
-        <!-- <video src="spandragon_xr2_clip.mp4" muted  class="xr2"></video> -->
-        <p class="xr2_p">프로에 걸맞은 프로급 파워. <br>
-            XR2는 세상에서 가장 빠른 vr 칩입니다.
-        </p>
-    <!-- <p class="xr2_p">vr 전용 커스텀칩인 <span>XR2</span> 이 이제 oculus quest 2에 탑재됩니다. <br>
-        이전 세대 대비 최대 <span>2.6배</span> 더 빠른 성능을 선사하여 <br> oculus quest 2는 강력한 퍼포먼스를 가진 vr기기로 만들어주죠. <br>
-        어떤 앱이든 매끄럽게 플레이하고, <br> 고사양 그래픽 게임도 무리없이 즐길 수 있습니다. </p> -->
-    </div>
+    
+    
     
 
     <!-- <div class="comparison_box">
@@ -750,6 +751,52 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
                 <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
             </ul>
         </div> -->
+        <div class="xr2_box">
+            <div class="xr2_images_box">
+                <img src="xr2_images/1.jpg" alt="" class="xr2_images"></div>
+            
+            <!-- <img src="xr2_images/1.jpg" alt="" class="xr2_Tumb"> -->
+            <div class="xr2_content_box">
+                <p class="xr2_p">프로에 걸맞은 프로급 파워. <br>
+                    XR2는 세상에서 가장 빠른 vr 칩입니다.
+                </p>
+                <ul class="xr2_comparison">
+                    <li><h5>cpu</h5>
+                        <ul>
+                            <li>xr2 <div class="chart"></div></li>
+                            <li>835  <div class="chart"></div></li>
+                        </ul>
+                    </li>
+                    <li><h5>gpu</h5>
+                        <ul>
+                            <li>xr2  <div class="chart"></div></li>
+                            <li>835  <div class="chart"></div></li>
+                        </ul>
+                    </li>
+                    <li><h5>display</h5>
+                        <ul>
+                            <li>xr2  <div class="chart"></div></li>
+                            <li>835  <div class="chart"></div></li>
+                        </ul>
+                    </li>
+                    <li><h5>ai</h5>
+                        <ul>
+                            <li>xr2  <div class="chart"></div></li>
+                            <li>835  <div class="chart"></div></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="xr2_content_bottom">
+                    <img src="oculus_device_resize.png" alt="">
+                </div>
+            </div>
+            
+            <!-- <video src="spandragon_xr2_clip.mp4" muted  class="xr2"></video> -->
+            
+        <!-- <p class="xr2_p">vr 전용 커스텀칩인 <span>XR2</span> 이 이제 oculus quest 2에 탑재됩니다. <br>
+            이전 세대 대비 최대 <span>2.6배</span> 더 빠른 성능을 선사하여 <br> oculus quest 2는 강력한 퍼포먼스를 가진 vr기기로 만들어주죠. <br>
+            어떤 앱이든 매끄럽게 플레이하고, <br> 고사양 그래픽 게임도 무리없이 즐길 수 있습니다. </p> -->
+        </div>
 <div class="content3">
     <div class="content3_service_box">
         
