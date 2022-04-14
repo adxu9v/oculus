@@ -88,7 +88,7 @@
         let s1 = $('.horizon').get(0)
         let xr2Play = $('.xr2').get(0)
         let oculusPlay = $('.oculus_charge').get(0)
-        let xr2_2_boxsc = $('.xr2_2_box').offset().top
+        
            sc = $(this).scrollTop()
            ss =$('.slide').height()
            $('.sc>h5').text(sc)
@@ -367,10 +367,10 @@ if(sc<=33500){$('.xr2_2_box').css({'position':'relative','margin-top':'0px'});
 $('.xr2_2_left_box','.xr2_2_right_box').css({'position':'relative'})
 }
 if(sc>33200){$('.oculus_sound_img1_box_p').css({'opacity':'1','margin-top':'50px'})}
-if(sc>33500 && sc<=35600){$('.xr2_2_box').css({'position':'fixed','margin-top':'0px'});
+if(sc>33390 && sc<=35490){$('.xr2_2_box').css({'position':'fixed','margin-top':'0px'});
 $('.xr2_2_left_box','.xr2_2_right_box').css({'position':'fixed'});
 }
-if(sc>35600){$('.xr2_2_box').css({'position':'relative','margin-top':'2100px'});
+if(sc>35490){$('.xr2_2_box').css({'position':'absolute','margin-top':'2100px'});
 $('.xr2_2_left_box','.xr2_2_right_box').css({'position':'relative'})
 }
 if(sc<=34100){$('.xr2_2_left_box_p1').css({'opacity':'1','top':'45%'});
@@ -535,7 +535,7 @@ $('.comparison_list>h2').click(function(){
        .oculus_charge_p{color: #000; font-size: 30px; text-align: center; opacity: 1; position: fixed; left: 0; right: 0; top: 100px; margin: auto; z-index: 9999999;}
        .oculus_charge_p>li{display: inline-block; margin-right: 50px;}
        .oculus_charge_p>li>span{font-size: 44px;}
-       .content3{position: relative; width: 100%; height: 5600px;  box-sizing: border-box;}
+       .content3{position: relative; width: 100%; height: 5490px;  box-sizing: border-box;}
        .content3_service_box{width: 100%; height: auto; background-color: #fff;}
        .content3_service_box::after{content: ""; display: block; clear: both;}
        .xr2_box{position: relative; width: 100%; height: 4000px; z-index: 999999; opacity: 1; background-color: #000; overflow: hidden;}
@@ -544,13 +544,13 @@ $('.comparison_list>h2').click(function(){
        .xr2_content_box{width: 80%; height: 100%; margin: auto; margin-top: 100px; text-align: center;}
        .xr2_p{color: #fff; width: 700px; font-size: 40px; margin-top: 100px; font-weight: 700; z-index: 99999999; float: left; clear: both; }
        .xr2_p2{color: #aaa; font-size: 20px; margin-top: 100px; font-weight: 700; float: left; text-align: left; line-height: 30px; margin-left: 150px;}
-       .xr2_comparison{width: 600px; height: 900px; float: right; background-color: rgba(255, 255, 255, 0.1);}
-       .xr2_comparison>li{width: 100%; height: 25%; text-align: left;  color: #fff; }
+       .xr2_comparison{width: 600px; height: 700px; float: right; background-color: rgba(255, 255, 255, 0.1);}
+       .xr2_comparison>li{width: 100%; height: 25%; border: 1px solid #fff; text-align: left;  color: #fff;}
        .xr2_comparison>li>h5{text-align: center; margin-top: 10px; line-height: 0px;}
-       .xr2_img{width: 60px; margin-top: 20px; float: left;}
-       .snp_835_img{width: 60px; margin-top: 20px; float: left; clear: both;}
-       .xr2_comparison div{float: left;  width: 80%; height: 20px; line-height: 80px; margin-top: 40px; border-radius: 0px 10px 10px 0px; transition: 0.3s;}
-       .xr2_comparison span{line-height: 100px; margin-left: 10px; font-size: 20px; opacity: 0;}
+       .xr2_img{width: 50px; margin-top: 10px; float: left;}
+       .snp_835_img{width: 50px; margin-top: 10px; float: left; clear: both;}
+       .xr2_comparison div{float: left;  width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s;}
+       .xr2_comparison span{line-height: 90px; margin-left: 10px; font-size: 20px; opacity: 0;}
        .xr2_chart{background-color: #e04e4f;}
        .xr2_comparison_list1>li:nth-child(1)>div{width: 40%;}
        .xr2_comparison_list1>li:nth-child(2)>div{width: 20%;}
@@ -572,7 +572,7 @@ $('.comparison_list>h2').click(function(){
        .oculus_sound_img2{width: 33%; float: right;}
        .oculus_sound_img1_box_p{float: right; margin-top: 50px; width: 30%; font-size: 26px; margin-right: 3%; opacity: 0;}
        .xr2_box::after{content:""; clear: both; display: block;}
-       .xr2_2_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0; z-index: 9;}
+       .xr2_2_box{width: 100%; height: 100vh; position: relative; left: 0; bottom: 0; margin-top: 0; z-index: 99;}
        .xr2_2_box::after{content: ""; display: block; clear: both;}
        .xr2_2_left_box{float: left; width: 50%; height: 100vh; position: relative; background-color: rgb(0, 163, 0);}
        .xr2_2_left_box>h1{position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center;}
