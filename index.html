@@ -164,7 +164,7 @@
            if(sc<=12800){$('.line').css({'opacity':'1'})}
            if(sc>12800){$('.line').css({'opacity':'0'})}
            if(sc>12000 && sc<12500){$('.line').css({'left':((sc-12000)*0.1)+50+'%'});
-           $('.blur_2px').css({'width':(50-(sc-12000)*0.1)+'%'})
+           $('.blur_2px').css({'width':(50-(sc-12000)*0.1)+'%','opacity':'1'})
            }
            if(sc>12500){$('.line').css({'left':'100%'});
            $('.blur_2px').css({'opacity':'0'})
@@ -358,22 +358,47 @@ $('.xr2_2_left_box','.xr2_2_right_box').css({'position':'fixed'});
 if(sc>35600){$('.xr2_2_box').css({'position':'relative','margin-top':'2100px'});
 $('.xr2_2_left_box','.xr2_2_right_box').css({'position':'relative'})
 }
-if(sc<=34100){$('.xr2_2_left_box_p1').css({'opacity':'1','top':'45%'})}
+if(sc<=34100){$('.xr2_2_left_box_p1').css({'opacity':'1','top':'45%'});
+$('.xr2_2_game_img').css({'opacity':'1'})
+$('.xr2_2_left_box').css({'background-color':'rgb(0,163,0)'})
+}
 if(sc>34100 && sc<=34300){$('.xr2_2_left_box_p1').css({'top':(45-((sc-34100))*0.01)+'%','opacity':(1-((sc-34100)*0.005))});
+$('.xr2_2_game_img').css({'opacity':(1-((sc-34100)*0.005))})
 }
-if(sc>34300){$('.xr2_2_left_box_p1').css({'opacity':'0'})}
+if(sc>34300){$('.xr2_2_left_box_p1').css({'opacity':'0'});
+$('.xr2_2_game_img').css({'opacity':'0'})
+}
 if(sc<=34200){$('.xr2_2_left_box_p2').css({'opacity':'0','top':'47%'})}
-if(sc>34200 && sc<=34400){$('.xr2_2_left_box_p2').css({'top':(47-((sc-34200))*0.01)+'%','opacity':((sc-34200)*0.005)});}
-if(sc>34400 && sc<34600){$('.xr2_2_left_box_p2').css({'opacity':'1','top':'45%'})}
-if(sc>34900 && sc<=35100){$('.xr2_2_left_box_p2').css({'top':(45-((sc-34900))*0.01)+'%','opacity':(1-((sc-34900)*0.005))});
+$('.xr2_2_cv_img').css({'opacity':'0'});
+if(sc>34200 && sc<=34400){$('.xr2_2_left_box_p2').css({'top':(47-((sc-34200))*0.01)+'%','opacity':((sc-34200)*0.005)});
+$('.xr2_2_cv_img').css({'opacity':(((sc-34200)*0.005))})
 }
-if(sc>35100){$('.xr2_2_left_box_p2').css({'opacity':'0'})}
-if(sc<=35000){$('.xr2_2_left_box_p3').css({'opacity':'0'})}
-if(sc>35000 && sc<=35200){$('.xr2_2_left_box_p3').css({'top':(47-((sc-35000))*0.01)+'%','opacity':((sc-35000)*0.005)});}
-$('.companys_list>li').mouseenter(function(){
+//(sc-34100)*1.176
+if(sc>34100 && sc<34400){$('.xr2_2_left_box').css({'background-color':'rgb('+((sc-34100)*0.85)+','+(163-((sc-34100)*0.21))+',0)'})}
+if(sc>34400 && sc<34900){$('.xr2_2_cv_img').css({'opacity':'1'});
+$('.xr2_2_left_box').css({'background-color':'rgb(255,100,0)'})
+}
+if(sc>34400 && sc<34600){$('.xr2_2_left_box_p2').css({'opacity':'1','top':'45%'});
+}
+if(sc>34900 && sc<=35100){$('.xr2_2_left_box_p2').css({'top':(45-((sc-34900))*0.01)+'%','opacity':(1-((sc-34900)*0.005))});
+$('.xr2_2_cv_img').css({'opacity':(1-((sc-34900)*0.005))})
+}
+if(sc>35100){$('.xr2_2_left_box_p2').css({'opacity':'0'});
+$('.xr2_2_cv_img').css({'opacity':'0'})
+}
+if(sc<=35000){$('.xr2_2_left_box_p3').css({'opacity':'0'});
+$('.xr2_2_5g_img').css({'opacity':'0'})
+}
+if(sc>34900 & sc<=35100){$('.xr2_2_left_box').css({'background-color':'rgb(255,'+(100+((sc-34900)*0.775))+','+((sc-34900)*1.275)+')'});
+}
+if(sc>35100){$('.xr2_2_left_box').css({'background-color':'rgb(255,255,255)'})}
+if(sc>35000 && sc<=35200){$('.xr2_2_left_box_p3').css({'top':(47-((sc-35000))*0.01)+'%','opacity':((sc-35000)*0.005)});
+$('.xr2_2_5g_img').css({'opacity':(((sc-35000)*0.005))})
+}
+$('.companys_list>li>img').mouseenter(function(){
 $(this).css({'opacity':'1'});
 })
-$('.companys_list>li').mouseleave(function(){
+$('.companys_list>li>img').mouseleave(function(){
 $(this).css({'opacity':'0.7'});
 })
 $('.comparison_list>li').click(function(){
@@ -484,18 +509,18 @@ $('.comparison_list>h2').click(function(){
              bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85);}
              .ipad_bg{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background-color: #000; width: 400px; height: 300px; z-index: -2;}
        .content2_p_mirror{position: fixed; left: 50%; top: 10%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s;}
-       .content2_p_mirror2{position: fixed; left: 40%; bottom: 35%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
-       .content2_p_mirror3{position: fixed; left: 75%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 12px;}
+       .content2_p_mirror2{position: fixed; left: 30%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px;}
+       .content2_p_mirror3{position: fixed; left: 70%; bottom: 22%; transform: translateX(-50%); color: #aaa; font-size: 30px; opacity: 0; transition: 1s; font-size: 12px;}
        .content2>.content2_box>.oculus_device{position: fixed; left: 20%; top: 0; right: 0; bottom: 0; margin: auto; transform: scale(0.7); opacity: 0;}
        .content2>.content2_box>.oculus_device_right{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(30deg); opacity: 0;}
        .content2>.content2_box>.oculus_device_left{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(-30deg); opacity: 0; }
        .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
-       .content2_p_app{position: fixed; top: 50%; left: 100px; color: #000; font-size: 30px; transition: 1s; opacity: 0;}
+       .content2_p_app{position: fixed; top: 50%; left: 100px; color: #000; font-size: 24px; transition: 1s; opacity: 0; line-height: 30px;}
        .oculus_charge_images{position: fixed; width: 100%; height: 100vh; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 99999; opacity: 0; transition: 1s; transform: scale(1);}
        .oculus_charge_p{color: #000; font-size: 30px; text-align: center; opacity: 1; position: fixed; left: 0; right: 0; top: 100px; margin: auto; z-index: 9999999;}
        .oculus_charge_p>li{display: inline-block; margin-right: 50px;}
        .oculus_charge_p>li>span{font-size: 44px;}
-       .content3{position: relative; width: 100%; height: 5600px; background-color: red; box-sizing: border-box;}
+       .content3{position: relative; width: 100%; height: 5600px;  box-sizing: border-box;}
        .content3_service_box{width: 100%; height: auto; background-color: #fff;}
        .content3_service_box::after{content: ""; display: block; clear: both;}
        .xr2_box{position: relative; width: 100%; height: 4000px; z-index: 999999; opacity: 1; background-color: #000; overflow: hidden;}
@@ -534,13 +559,14 @@ $('.comparison_list>h2').click(function(){
        .xr2_box::after{content:""; clear: both; display: block;}
        .xr2_2_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0; z-index: 999999999999999;}
        .xr2_2_box::after{content: ""; display: block; clear: both;}
-       .xr2_2_left_box{float: left; width: 50%; height: 100vh; position: relative; background-color: #fff;}
+       .xr2_2_left_box{float: left; width: 50%; height: 100vh; position: relative; background-color: rgb(0, 163, 0);}
        .xr2_2_left_box>h1{position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center;}
        .xr2_2_left_box>h2{position: absolute; top: 40%; left: 50%; transform: translateX(-50%);}
        .xr2_2_left_box>p{position: absolute; top: 47%; left: 50%; opacity: 0; transform: translateX(-50%);}
        .xr2_2_left_box_p1{opacity: 1; top: 45%;}
        .xr2_2_right_box{float: right; width: 50%; height: 100vh; position: relative;}
-       .xr2_2_right_box>img{width: 100%; height: 100%; position: absolute; right: 0; top: 0;}
+       .xr2_2_right_box>img{width: 100%; height: 100%; position: absolute; right: 0; top: 0; opacity: 1;}
+      .xr2_2_game_img{opacity: 1;}
        .content4{width: 100%; height: 1000px; position: relative; background-color: #aaa; z-index: 99999999999; overflow: hidden; box-sizing: border-box;}
        .content4>h2{text-align: center; font-size: 30px; color: #fff; margin-top: 100px;}
        .companys_list{width: 100%; height: 90vh; margin: auto; margin-top: 0px; text-align: center;   overflow: hidden; background-color: #aaa;}
@@ -691,16 +717,16 @@ $('.comparison_list>h2').click(function(){
                헤드셋 미러링</p> 
         </div>
         <div class="content2_p_mirror2">
-            <p>미러링 기능을 사용하면 VR에서 보이는 내용을 주변 사람들과 공유할 수 있습니다. <br> 컴퓨터, 휴대폰, 지원되는 Chromecast 기기 또는 TV로 미러링할 수 있습니다.
+            <p>미러링 기능을 사용하면 VR에서 보이는 <br> 내용을 주변 사람들과 공유할 수 있습니다. <br> 컴퓨터, 휴대폰, 지원되는 Chromecast 기기 <br> 또는 TV로 미러링할 수 있습니다.
                </p> 
         </div>
         <div class="content2_p_mirror3">
-            <p>오큘러스의 미러링은 quest2 이외에도 quest1, go에서도 사용이 가능합니다. <br>
+            <p>오큘러스의 미러링은 quest2 이외에도 <br> quest1, go에서도 사용이 가능합니다. <br>
 
-Chromecast 또는 기타 스마트 기능이 내장된 TV가 지원될 수 있지만 모든 모델과의 호환성이 보장되지는 않습니다. <br>
-미러링과 녹화를 동시에 진행할 경우 문제가 발생할 수 있습니다. <br>
-Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습니다. <br>
-미러링으로 배터리 사용량이 증가하거나 앱 내 성능이 저하될 수 있습니다.
+Chromecast 또는 기타 스마트 <br> 기능이 내장된 TV가 <br> 지원될 수 있지만 모든 모델과의 <br> 호환성이 보장되지는 않습니다. <br>
+미러링과 녹화를 동시에 진행할 경우 <br> 문제가 발생할 수 있습니다. <br>
+Oculus 앱을 종료하거나 최소화하면 <br> 미러링이 중단될 수 있습니다. <br>
+미러링으로 배터리 사용량이 증가하거나 <br> 앱 내 성능이 저하될 수 있습니다.
                </p> 
         </div>
         
@@ -730,7 +756,7 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
         <img src="oculus_charge_images/1.jpg" alt="" class="oculus_charge_images">
         <ul class="oculus_charge_p">
             <li>최대 <span>2.5</span>시간 <br> 오큘러스가 완전히 충전되는 시간</li>
-            <li>최대 <span>4</span>시간 <br> 완전히 충전됬을 때 사용 시간</li>
+            <li>최대 <span>4</span>시간 <br> 완전히 충전했을 때 사용 시간</li>
         </ul>
         
     </div>
@@ -775,34 +801,9 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
 </ul>
     </div> -->
 
-<!-- <img src="oculus_app_login.png" alt="" class="oculus_app_login"> -->
-        <!-- <div class="companys">
-            <h2>Our Customers & Partners</h2>
-            <ul class="companys_list">
-                <li><img src="company_logos/Kia_Logo_white.png" alt=""></li>
-                <li><img src="company_logos/audi_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Meta_Logo_white.png" alt=""></li>
-                <li><img src="company_logos/Sony_logo_white.png" alt=""></li>
-                <li><img src="company_logos/apple_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Tesla_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Google_logo_white.png" alt=""></li>
-                <li><img src="company_logos/hyundai_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Samsung_Logo_white.png" alt=""></li>
-                <li><img src="company_logos/twitter_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Nintendo_Logo_white.png" alt=""></li>
-                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
-                <li><img src="company_logos/PlayStation_logo_white.png" alt=""></li>
-                <li><img src="company_logos/National_Geographic_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Mercedes-Benz_Logo_white.png" alt=""></li>
-                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
-                <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white.png" alt=""></li>
-            </ul>
-        </div> -->
         <div class="xr2_box">
             <div class="xr2_images_box">
                 <img src="xr2_images/1.jpg" alt="" class="xr2_images"></div>
-            
-            <!-- <img src="xr2_images/1.jpg" alt="" class="xr2_Tumb"> -->
             <div class="xr2_content_box">
                 <p class="xr2_p">프로에 걸맞은 <br> 프로급 파워. <br>
                     XR2는 세상에서 <br> 가장 빠른 vr 칩입니다.
@@ -843,9 +844,9 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
                     사용이 가능하고 게임 환경 또한 <br> 전세대보다 몰입감을 높여줍니다. <br>
                     
                 </p>
-                <div class="xr2_content_bottom">
+                <!-- <div class="xr2_content_bottom">
                     <img src="oculus_device_up_retouch.png" alt="" class="oculus_device_up_retouch">
-                </div>
+                </div> -->
                 
             </div>
             
@@ -876,7 +877,9 @@ Oculus 앱을 종료하거나 최소화하면 미러링이 중단될 수 있습�
             <p class="xr2_2_left_box_p3">최초의 5G</p>
         </div>
         <div class="xr2_2_right_box">
-            <img src="5G.jpeg" alt="">
+            <img src="company_logos/high_quality_game_img_resize.png" alt="" class="xr2_2_game_img">
+            <img src="company_logos/cv_resize.png" alt="" class="xr2_2_cv_img">
+            <img src="company_logos/5G_resize.png" alt="" class="xr2_2_5g_img">
         </div>
     </div>
 </div>
