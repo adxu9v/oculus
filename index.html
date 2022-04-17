@@ -94,8 +94,8 @@
            $('.sc>h5').text(sc)
            $('.oculus_charge_images').attr('src','oculus_charge_images/'+scrollYPosCharge2+'.jpg')
            $('.xr2_images').attr('src','xr2_images/'+scrollYPos2+'.jpg')
-           if(sc<=100){$('.mouse').css({'bottom':'80px'})}
-           if(sc>100){$('.mouse').css({'bottom':'10px'})}
+           if(sc<100){$('.mouse').css({'bottom':'80px'})}
+           if(sc>=100){$('.mouse').css({'bottom':'10px'})}
            if(sc<=1200 || sc>6600){$('.content2_climb').css({'transform':'scale(0)','opacity':'0'})}
            if(sc>1200 && sc <=1600){$('.content2_climb').css({'transform':'scale('+(sc-1200)*0.00125+')','opacity':'1'})}
            if(sc>1600 && sc<=6200){$('.content2_climb').css({'transform':'scale(0.5)','opacity':'1'})}
@@ -217,9 +217,11 @@
         $('.mouse').css({'border':'2px solid #000','color':'#000'});
         $('.mouse_wheel').css({'background-color':'#000'})
     }    
+    if(sc<=20000){$('.oculus_app_login').css({'transform':'rotate(-90deg)'})}
     if(sc>20000){$('.content2').css({'background':'#fff'});
     $('.mouse').css({'border':'2px solid #000','color':'#000'})
-    $('.mouse_wheel').css({'background-color':'#000'})
+    $('.mouse_wheel').css({'background-color':'#000'});
+    $('.oculus_app_login').css({'transform':'rotate(0deg)'})
 }
         if(sc<20000){$('.iphone').css({'transform':'rotate(270deg)'});
         $('.horizon').css({'transform':'rotate(0deg)'})
@@ -231,8 +233,8 @@
     $('.horizon').css({'transform':'rotate(90deg)'})
 }
     if(sc<21000){$('.horizon').css({'opacity':'1'})}
-    if(sc<=20500){$('.oculus_app_login').css({'opacity':'0'})}
-    if(sc>20500 && sc<=21000){$('.oculus_app_login').css({'opacity':(sc-20500)*0.002})}
+    if(sc<=20500){$('.oculus_app_login').css({'opacity':'0'});}
+    if(sc>20500 && sc<=21000){$('.oculus_app_login').css({'opacity':(sc-20500)*0.002,'transform':'rotate(0deg)'})}
     if(sc<=21000){ $('.oculus_device').css({'opacity':'0'});
     $('.oculus_device_right').css({'opacity':'0'});
     $('.oculus_device_left').css({'opacity':'0'});
@@ -345,9 +347,10 @@ $('.xr2_comparison_list2>li:nth-child(1)>div').css({'width':'50%'});
 $('.xr2_comparison_list2>li:nth-child(2)>div').css({'width':'20%'});
 $('.xr2_comparison_list3>li:nth-child(1)>div').css({'width':'60%'});
 $('.xr2_comparison_list3>li:nth-child(2)>div').css({'width':'20%'});
-$('.xr2_comparison_list4>li:nth-child(1)>div').css({'width':'80%'});
+$('.xr2_comparison_list4>li:nth-child(1)>div').css({'width':'70%'});
 $('.xr2_comparison_list4>li:nth-child(2)>div').css({'width':'10%'});
-$('.xr2_comparison span').css({'opacity':'1'})
+$('.xr2_comparison span').css({'opacity':'1'});
+$('..xr2_comparison div::before').css({'opacity':'1'})
 }
 if(sc<=29800){$('.oculus_device_up_retouch').css({'top':'20%'})}
 if(sc>29900){$('.oculus_device_up_retouch').css({'top':'50%'})}
@@ -432,17 +435,18 @@ $('.comparison_list>h2').click(function(){
         <!-- lts 아이콘 크기 키우고 간격 줄이기 -->
     <style>
         *{padding: 0; margin: 0; list-style: none; font-family: 'Nanum Gothic', sans-serif; font-weight: 900;}
+        a{text-decoration: none; color: inherit;}
         .sc{position: fixed; padding: 10px; left: 0; top: 0; font-size: 30px; color: #000; z-index: 999999999999; background-color: #fff;}
         body,html{height: 100%;}
         body{ overflow-X: hidden;}
-        header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0; margin: auto; z-index: 999;}
+        header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0; margin: auto; z-index: 9999999999;}
         .header_box{width: 90%; height: 100%; position: absolute; left: 50% ;top: 0; transform: translateX(-50%);}
         .header_box::after{content: ""; display: block; clear: both;}
         .header_box>h2{width: 40px; float: left; margin-top: 25px;}
         .logo{width: 100%;}
         .menu{float: right; width: 30px; height: 100%; margin-top: 20px; cursor: pointer;}
         .menu>li{width: 30px; height: 2px; margin: 6px 0; border-radius: 3px; background-color: #fff; transition: 0.3s;}
-        .slide_box{width: 100%; height: 100%; position: relative; left: 0; top: 0; background-color: black; overflow: hidden; z-index: 9999999999999999999;}
+        .slide_box{width: 100%; height: 100%; position: relative; left: 0; top: 0; background-color: black; overflow: hidden; z-index: 99999999999;}
         .slide_box::after{content: ""; display: block; clear: both;}
         .slide{position: absolute; left: 0; top: 0; width: 300%; }
         .slide>li{width: 33.3333%; float: left; background-color: #000; position: relative;}
@@ -452,7 +456,7 @@ $('.comparison_list>h2').click(function(){
         .slide_text_box>h2{font-size: 30px;}
         .slide_text_box>h3{margin-top: 10px; font-size: 90px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 400;}
         .slide_text_box>p{font-size: 36px; margin-top: 20px;}
-        .slide button{background-color: #181ef9; color: #fff; font-size: 16px; width: 130px; height: 43px; border-radius: 50px; border: none; margin-top: 20px; margin-right: 16px; cursor: pointer;}
+        .slide_text_box>a{background-color: #181ef9; color: #fff; font-size: 16px; padding: 15px 25px; border-radius: 50px; border: none; float: left; margin-top: 20px; margin-right: 20px; cursor: pointer; display: block;}
         .mouse{width: 22px; height: 32px; border-radius: 30px; border: 2px solid #fff; box-sizing: border-box; position: fixed; z-index: 999999999; bottom: 80px; left: 0; right: 0; margin: auto; transition: 0.3s; z-index: 999999;}
         .mouse>p{position: absolute; top: -25px; right: -6px; font-size: 14px; font-weight: 700;}
         .mouse_wheel{width: 4px; height: 4px; background-color: #fff; border-radius: 5px; position: absolute; right:0; left: 0; top: 5px; margin: auto;}
@@ -483,14 +487,10 @@ $('.comparison_list>h2').click(function(){
         .sns>li{float: left; width: 30px; height: 30px; margin-left: 10px; cursor: pointer; opacity: 0.7;}
         .sns>li>img{width: 100%; vertical-align: top;}
         .sns>li:hover{opacity: 1;}
-        .content1{width: 100%; height: 3000px; overflow: hidden; background:url(oculus_close_up.mp4) center no-repeat fixed; position: relative; left: 0; top: 0;}
-        .content1>h2{text-align: center; line-height: 100px; font-size: 50px; color: #fff; position: fixed; left: 0; top: 50%; margin-top: 20px; transform: translateY(-50%); width: 100%; z-index: 9999; }
-        .content1>video{opacity: 0.8; position: relative; left: 0; top: 0;}
         /* sub시작 */
         .content2{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative; z-index: 2;}
         .content2_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
         .content2_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;  transition: 0.3s;}
-        /* content2_climb 0.5 content2_0x0 0.3 content2_beatsaber 0.3 content2_rpg 0.33 content2_starwars 0.45 content2_starwars2 0.25 content2_combine 0.2 content2_vr 0.26 horizon_img 0.15*/
         .content2_climb{ transform: scale(0); margin-left: -1200px; margin-top: -600px; opacity: 0;}
         .content2_0x0{ transform: scale(0); margin-left: -1500px; margin-top: -400px; opacity: 0;}
         .content2_beatsaber{ transform: scale(0); margin-left: -1050px; margin-top: -900px; opacity: 0;}
@@ -512,7 +512,7 @@ $('.comparison_list>h2').click(function(){
         .iphone{transform:  rotate(270deg); width: 1600px; height: 2040px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
         /* .iphone_box>.iphone_bg{position: fixed;  left: 0px; top: 0px; background-color: #000; } */
         .horizon{border-radius: none; transition: 1s;}
-        .oculus_app_login{ width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
+        .oculus_app_login{ width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s; transform: rotate(-90deg);}
         .mac_box{position: fixed; right: -40%; top: 25%; width: 600px; height: 300px;z-index: 99; opacity: 1; transition: 1s;}
         .mac{width: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
         .mac_box>video{width: 100%;  position: absolute; left: 0; top: 0;
@@ -542,15 +542,17 @@ $('.comparison_list>h2').click(function(){
        .xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0; z-index: 999999999; box-sizing: border-box;}
        .xr2_images{position: absolute; left: 0; top: 0; width: 100vw; z-index: 99999999999; height: 100vh; margin-top: 0; box-sizing: border-box;}
        .xr2_content_box{width: 80%; height: 100%; margin: auto; margin-top: 100px; text-align: center;}
-       .xr2_p{color: #fff; width: 700px; font-size: 40px; margin-top: 100px; font-weight: 700; z-index: 99999999; float: left; clear: both; }
-       .xr2_p2{color: #aaa; font-size: 20px; margin-top: 100px; font-weight: 700; float: left; text-align: left; line-height: 30px; margin-left: 150px;}
-       .xr2_comparison{width: 600px; height: 700px; float: right; background-color: rgba(255, 255, 255, 0.1);}
-       .xr2_comparison>li{width: 100%; height: 25%; border: 1px solid #fff; text-align: left;  color: #fff;}
+       .xr2_p{color: #fff; width: 60%; font-size: 40px; margin-top: 100px; font-weight: 700; z-index: 99999999; float: left; clear: both; }
+       .xr2_p2{color: #aaa; width: 50%; font-size: 20px; margin-top: 100px; margin-left: 10%;font-weight: 700; float: left; text-align: left; line-height: 30px;}
+       .xr2_comparison{width: 40%; height: 700px; float: right; background-color: rgba(255, 255, 255, 0.1);}
+       .xr2_comparison>li{width: 100%; height: 25%; text-align: left;  color: #fff; box-sizing: border-box; overflow: hidden;}
        .xr2_comparison>li>h5{text-align: center; margin-top: 10px; line-height: 0px;}
+       .xr2_comparison>li>ul{margin-top: 10px;}
        .xr2_img{width: 50px; margin-top: 10px; float: left;}
        .snp_835_img{width: 50px; margin-top: 10px; float: left; clear: both;}
-       .xr2_comparison div{float: left;  width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s;}
-       .xr2_comparison span{line-height: 90px; margin-left: 10px; font-size: 20px; opacity: 0;}
+       .xr2_comparison div{float: left; margin-left: 20px; width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s; position: relative;}
+       .xr2_comparison div::before{content: ""; width: 2px; height: 70px; background-color: #fff; position: absolute; left: 0; bottom: 0; top: 0; margin: auto;}
+       .xr2_comparison span{line-height: 70px; margin-left: 10px; font-size: 20px; opacity: 0;}
        .xr2_chart{background-color: #e04e4f;}
        .xr2_comparison_list1>li:nth-child(1)>div{width: 40%;}
        .xr2_comparison_list1>li:nth-child(2)>div{width: 20%;}
@@ -558,7 +560,7 @@ $('.comparison_list>h2').click(function(){
        .xr2_comparison_list2>li:nth-child(2)>div{width: 20%;}
        .xr2_comparison_list3>li:nth-child(1)>div{width: 60%;}
        .xr2_comparison_list3>li:nth-child(2)>div{width: 20%;}
-       .xr2_comparison_list4>li:nth-child(1)>div{width: 80%;}
+       .xr2_comparison_list4>li:nth-child(1)>div{width: 70%;}
        .xr2_comparison_list4>li:nth-child(2)>div{width: 10%;}
        .snp_835_chart{background-color: #abbacf;}
        .xr2_content_box2{width: 100%; border: 1px solid #fff; box-sizing: border-box;}
@@ -626,8 +628,8 @@ $('.comparison_list>h2').click(function(){
                     <h3>Infinite Office</h3>
                     <p>어디서든 자신의 공간을 <br>
                         즐겨보세요</p>
-                    <button>동영상 보기</button>
-                    <button>자세히 보기</button>
+                    <a href="https://youtu.be/5_bVkbG1ZCo" target="blank">동영상 보기</a>
+                    <a href="https://uploadvr.com/how-to-use-infinite-office-oculus-quest-2/" target="blank">자세히 보기</a>
                 </div>
             </li>
             <li><video src="oculus_intro_2.mp4" alt="" muted loop autoplay></video>
@@ -635,8 +637,8 @@ $('.comparison_list>h2').click(function(){
                     <h2>Oculus</h2>
                     <h3>Oculus Quest 2</h3>
                     <p>더 발전한 oculus 의 quest 2 <br> 지금 구매하세요</p>
-                    <button>동영상 보기</button>
-                    <button>자세히 보기</button>
+                    <a href="https://youtu.be/ATVGl9wOJsM" target="blank">동영상 보기</a>
+                    <a href="https://www.oculus.com/quest-2/?locale=ko_KR" target="blank">자세히 보기</a>
                 </div>
             </li>
             <li><video src="slide3_clip.mp4" muted loop autoplay ></video>
@@ -645,8 +647,8 @@ $('.comparison_list>h2').click(function(){
                     <h3>Oculus Guardian</h3>
                     <p>최대 5m <br>
                         안전한 공간에서 게임을 즐기세요</p>
-                    <button>동영상 보기</button>
-                    <button>자세히 보기</button>
+                    <a href="https://youtu.be/GojevL05Avw" target="blank">동영상 보기</a>
+                    <a href="https://support.oculus.com/guardian/?locale=ko_KR" target="blank">자세히 보기</a>
                 </div>
             </li>
         </ul>
@@ -686,11 +688,6 @@ $('.comparison_list>h2').click(function(){
             <h5>powred by meta desgined by oculus</h5>
     </div>
     </div>
-    <!-- <div class="content1">
-        <h2>인체공학적인 디자인.</h2>
-        <video src="oculus_close_up.mp4" muted loop autoplay>
-        </video> 
-    </div>-->
     <div class="content2">
         <div class="content2_box">
             <img src="game_images/The-Climb-1024x576.jpg" alt="" class="content2_climb">
@@ -779,43 +776,6 @@ Oculus 앱을 종료하거나 최소화하면 <br> 미러링이 중단될 수 �
         <p class="horizon_90hz">120hz</p>
         <p class="horizon_72hz">72hz</p>
         </div>
-    <!-- <div class="comparison_box">
-<h2>새로운 <br> Oculus Quest와 <br> 당신의 Oculus 비교하기</h2>
-<ul class="comparison_list">
-   
-    <h2>oculus quest 1 </h2>
-    <img src="oculus_front.png" alt="" class="comparison_quest2_img">
-    <img src="oculus_quest1_jpeg.jpeg" alt="" class="comparison_right_img">
-    <li class="comparison_quest1"> <span>oculus quest 1</span>
-        <ul class="comparison_sub">
-            <li>스냅드래곤835 대비 최대 2.6배 더 빠른 그래픽 성능을 <br> 자랑하는 xr2 칩.</li>
-            <li>최대 2시간 더 긴 게임 플레이를 제공하는 배터리</li>
-            <li>영상시청, 게임, 운동, 다운로드를 더 빠르게, <br> 더 적은 랙으로 즐길 수 있게 해주는 안드로이드10</li>
-            <li>오큘러스 최고의 인체공학적인 디자인 </li>
-            <li>2배 더 많아진 메모리와 램</li>
-        </ul>
-    </li>
-    <li class="comparison_rift"><span>oculus rift</span> 
-        <ul class="comparison_sub">
-            <li>스냅드래곤832 대비 최대 2.6배 더 빠른 그래픽 성능을 <br> 자랑하는 xr2 칩.</li>
-            <li>최대 3시간 더 긴 게임 플레이를 제공하는 배터리</li>
-            <li>영상시청, 게임, 운동, 다운로드를 더 빠르게, <br> 더 적은 랙으로 즐길 수 있게 해주는 안드로이드10</li>
-            <li>오큘러스 최고의 인체공학적인 디자인 </li>
-            <li>4배 더 많아진 메모리와 램</li>
-        </ul>
-    </li>
-    <li class="comparison_go"><span>oculus go</span> 
-        <ul class="comparison_sub">
-            <li>스냅드래곤821 대비 최대 2.6배 더 빠른 그래픽 성능을 <br> 자랑하는 xr2 칩.</li>
-            <li>최대 2.5시간 더 긴 게임 플레이를 제공하는 배터리</li>
-            <li>영상시청, 게임, 운동, 다운로드를 더 빠르게, <br> 더 적은 랙으로 즐길 수 있게 해주는 안드로이드10</li>
-            <li>오큘러스 최고의 인체공학적인 디자인 </li>
-            <li>3배 더 많아진 메모리와 램</li>
-        </ul>
-    </li>
-</ul>
-    </div> -->
-
         <div class="xr2_box">
             <div class="xr2_images_box">
                 <img src="xr2_images/1.jpg" alt="" class="xr2_images"></div>
