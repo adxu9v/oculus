@@ -64,13 +64,13 @@
                 $(this).children('li:nth-child(2)').stop().css({'transform':'rotate(-45deg)','margin-top':'-8px'})
                 $(this).children('li:nth-child(3)').stop().css({'opacity':'0'})
                 menu_num = 1;
-                $('.popup_box').stop().animate({'opacity':'1'})
+                $('.popup_box').stop().fadeIn()
                 }
                 else if(menu_num == 1){$(this).children('li:nth-child(1)').stop().css({'transform':'rotate(0deg','margin-top':'6px'})
                 $(this).children('li:nth-child(2)').stop().css({'transform':'rotate(-0deg)','margin-top':'6px'})
                 $(this).children('li:nth-child(3)').stop().css({'opacity':'1'})
                 menu_num = 0;
-                $('.popup_box').stop().animate({'opacity':'0'})
+                $('.popup_box').stop().fadeOut()
                 }
                 
             })
@@ -350,7 +350,7 @@
     .logo{width: 100%;}
     .menu{float: right; width: 30px; height: 100%; margin-top: 20px; cursor: pointer;}
     .menu>li{width: 30px; height: 2px; margin: 6px 0; border-radius: 3px; background-color: #fff; transition: 0.3s;}
-    .popup_box{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 1);z-index: 10; opacity: 0;}
+    .popup_box{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 1);z-index: 10; display: none;}
     .popup_box>ul{float: right; color: #fff; font-size: 44px; margin: 100px 80px;}
     .popup_box>ul>li{margin-top: 30px; opacity: 0.7; transition: 0.3s; text-align: right;}
     .popup_box>ul>li:hover{opacity: 1;}
