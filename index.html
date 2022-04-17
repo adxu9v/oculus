@@ -346,8 +346,7 @@
     header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0; margin: auto; z-index:99;}
     .header_box{width: 90%; height: 100%; position: absolute; left: 50% ;top: 0; transform: translateX(-50%);}
     .header_box::after{content: ""; display: block; clear: both;}
-    .header_box>h2{width: 40px; float: left; margin-top: 25px;}
-    .logo{width: 100%;}
+    .logo{width: 40px; float: left; margin-top: 25px;}
     .menu{float: right; width: 30px; height: 100%; margin-top: 20px; cursor: pointer;}
     .menu>li{width: 30px; height: 2px; margin: 6px 0; border-radius: 3px; background-color: #fff; transition: 0.3s;}
     .popup_box{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 1);z-index: 10; display: none;}
@@ -406,7 +405,7 @@
     .content2_starwars2{ transform: scale(0); margin-left: -500px; margin-top: -900px; opacity: 0;}
     .content2_combine{ transform: scale(0); margin-left: 00px; margin-top: -850px; opacity: 0;}
     .content2_vr{ transform: scale(0); margin-left: -350px; margin-top: -530px; opacity: 0;}
-    .iphone_box{position: absolute; left: 50%; top: 50%; width: none; height: none; transform: scale(0);  margin-left: -950px; margin-top: -535px; transition: 1s; z-index: 3; opacity: 0;}
+    .iphone_box{position: absolute; left: 50%; top: 50%; transform: scale(0);  margin-left: -950px; margin-top: -535px; transition: 1s; z-index: 3; opacity: 0;}
     .blur_2px{position: fixed; right: 0; top: 0; width: 50%; height: 100%; z-index: 2; backdrop-filter: blur(3px); transition: 1s; opacity: 1;}
     .content2_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s; z-index: 3;}
     .content2_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
@@ -417,7 +416,7 @@
     .horizon_90hz{position: absolute; left: 0; top: 0; color: #fff; margin: 20px; opacity: 0; transition: 1s;}
     .horizon_72hz{position: absolute; right: 0; top: 0; color: #fff; margin: 20px; opacity: 0; transition: 1s;}
     .iphone{transform:  rotate(270deg); width: 1600px; height: 2040px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
-    .horizon{border-radius: none; transition: 1s;}
+    .horizon{border-radius: 0; transition: 1s;}
     .oculus_app_login{ width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s; transform: rotate(-90deg);}
     .mac_box{position: fixed; right: -40%; top: 25%; width: 600px; height: 300px;z-index: 2; opacity: 1; transition: 1s;}
     .mac{width: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
@@ -504,15 +503,15 @@
 </head>
 <body>
     <header>
-        <header class="header_box">
-            <h2><img src="Oculus-Symbol_white.png" alt="" class="logo"></h2>
+        <div class="header_box">
+                <img src="Oculus-Symbol_white.png" alt="" class="logo">
             <ul class="menu">
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
             
-        </header>
+        </div>
     </header>
     <div class="popup_box">
         <ul>
@@ -524,7 +523,7 @@
     </div>
     <div class="slide_box">
         <ul class="slide">
-            <li><video src="infinite office_clip1.mp4" alt="" muted loop autoplay></video>
+            <li><video src="infinite_office_clip1.mp4" muted loop autoplay></video>
                 <div class="slide_text_box">
                     <h2>Oculus</h2>
                     <h3>Infinite Office</h3>
@@ -534,7 +533,7 @@
                     <a href="https://uploadvr.com/how-to-use-infinite-office-oculus-quest-2/" target="blank">자세히 보기</a>
                 </div>
             </li>
-            <li><video src="oculus_intro_2.mp4" alt="" muted loop autoplay></video>
+            <li><video src="oculus_intro_2.mp4" muted loop autoplay></video>
                 <div class="slide_text_box">
                     <h2>Oculus</h2>
                     <h3>Oculus Quest 2</h3>
