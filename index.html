@@ -167,29 +167,29 @@
         $('.mac_box').css({'right':'-100%'})}
         if(sc>15500 && sc<=16000){$('.ipad_box').css({'left':((sc-15500)*0.24)-100+'%'});
         $('.mac_box').css({'right':((sc-15500)*0.24)-100+'%'})}
-        if(sc>16000 && sc<=16500){$('.content2_p_mirror').css({'opacity':1-((sc-15500)*0.002)})}
-        if(sc>16500 && sc<=17000){$('.content2_p_mirror').css({'opacity':(sc-16500)*0.002})}
+        if(sc>16000 && sc<=16500){$('.mirroring_p1').css({'opacity':1-((sc-15500)*0.002)})}
+        if(sc>16500 && sc<=17000){$('.mirroring_p1').css({'opacity':(sc-16500)*0.002})}
         if(sc>16000 && sc<=18000){$('.ipad_box').css({'left':'20%'});
         $('.mac_box').css({'right':'20%'})
         }
-        if(sc<17000 || sc>18500){$('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':'0'});}
-        if(sc>17000 & sc<=18000){$('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':(sc-17000)*0.002});}
-        if(sc>17000 && sc<=18000){$('.content2_p_mirror').css({'opacity':'1'})}
-        if(sc>18000 && sc<=18500){$('.content2_p_mirror').css({'opacity':1-((sc-18000)*0.002)});
-        $('.content2_p_mirror2,.content2_p_mirror3').css({'opacity':1-((sc-18000)*0.002)});
+        if(sc<17000 || sc>18500){$('.mirroring_p2,.mirroring_p3').css({'opacity':'0'});}
+        if(sc>17000 & sc<=18000){$('.mirroring_p2,.mirroring_p3').css({'opacity':(sc-17000)*0.002});}
+        if(sc>17000 && sc<=18000){$('.mirroring_p1').css({'opacity':'1'})}
+        if(sc>18000 && sc<=18500){$('.mirroring_p1').css({'opacity':1-((sc-18000)*0.002)});
+        $('.mirroring_p2,.mirroring_p3').css({'opacity':1-((sc-18000)*0.002)});
         $('.ipad_box').css({'left':(20-(sc-18000)*0.24)+'%'});
         $('.mac_box').css({'right':(20-(sc-18000)*0.24)+'%'})}
-        if(sc>18500){$('.content2_p_mirror,.content2_p_mirror2,.content2_p_mirror3').css({'opacity':'0'})}
+        if(sc>18500){$('.mirroring_p1,.mirroring_p2,.mirroring_p3').css({'opacity':'0'})}
         if(sc>18500){$('.ipad_box').css({'left':'-30%'});
         $('.mac_box').css({'right':'-40%'})}
-        if(sc<19000){$('.content2').css({'background-color':'#000'});
+        if(sc<19000){$('.content1').css({'background-color':'#000'});
         $('.mouse').css({'border':'2px solid #fff','color':'#fff'});
         $('.mouse_wheel').css({'background-color':'#fff'})}
-        if(sc>19000 && sc<=20000){$('.content2').css({'background-color':'rgba('+(sc-19000)*0.255+','+(sc-19000)*0.255+','+(sc-19000)*0.255+')'});
+        if(sc>19000 && sc<=20000){$('.content1').css({'background-color':'rgba('+(sc-19000)*0.255+','+(sc-19000)*0.255+','+(sc-19000)*0.255+')'});
         $('.mouse').css({'border':'2px solid #000','color':'#000'});
         $('.mouse_wheel').css({'background-color':'#000'})}    
         if(sc<=20000){$('.oculus_app_login').css({'transform':'rotate(-90deg)'})}
-        if(sc>20000){$('.content2').css({'background':'#fff'});
+        if(sc>20000){$('.content1').css({'background':'#fff'});
         $('.mouse').css({'border':'2px solid #000','color':'#000'})
         $('.mouse_wheel').css({'background-color':'#000'});
         $('.oculus_app_login').css({'transform':'rotate(0deg)'})}
@@ -258,9 +258,9 @@
         $('.mouse_wheel').css({'background-color':'#fff'})}
         if(sc<26500){$('.xr2_Tumb').css({'opacity':'0'})}
         if(sc>26500 && sc<=27000){$('.xr2_Tumb').css({'opacity':((sc-26500)*0.002)})}
-        if(sc>20000 && sc<=27500){$('.content2').css({'background-color':'#fff'})}
-        if(sc>27500 && sc<=28500){$('.content2').css({'background-color':'rgb('+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+')'})}
-        if(sc>28500){$('.content2').css({'background-color':'#000'})}
+        if(sc>20000 && sc<=27500){$('.content1').css({'background-color':'#fff'})}
+        if(sc>27500 && sc<=28500){$('.content1').css({'background-color':'rgb('+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+')'})}
+        if(sc>28500){$('.content1').css({'background-color':'#000'})}
         if(sc<=27005){$('.xr2_images_box').css({'margin-top':'0px','position':'relative'});
         $('.xr2_images').attr('src','xr2_images/1.jpg');
         $('.xr2_comparison').css({'opacity':'1'})}
@@ -394,7 +394,7 @@
     .sns>li{float: left; width: 30px; height: 30px; margin-left: 10px; cursor: pointer; opacity: 0.7;}
     .sns>li>img{width: 100%; vertical-align: top;}
     .sns>li:hover{opacity: 1;}
-    .content2{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative;}
+    .content1{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative;}
     .store_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
     .store_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;  transition: 0.3s;}
     .store_climb{ transform: scale(0); margin-left: -1200px; margin-top: -600px; opacity: 0;}
@@ -428,12 +428,12 @@
     .ipad_box>video{width: 100%; position: absolute; left: 0; top: 0;
     bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85);}
     .ipad_bg{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background-color: #000; width: 400px; height: 300px; z-index: -2;}
-    .content2_p_mirror{position: fixed; left: 50%; top: 10%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s;}
-    .content2_p_mirror2{position: fixed; left: 30%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px; line-height: 25px;}
-    .content2_p_mirror3{position: fixed; left: 70%; bottom: 18%; transform: translateX(-50%); color: #aaa; font-size: 30px; opacity: 0; transition: 1s; font-size: 12px; line-height: 18px;}
-    .content2>.store_box>.oculus_device{position: fixed; left: 20%; top: 0; right: 0; bottom: 0; margin: auto; transform: scale(0.7); opacity: 0;}
-    .content2>.store_box>.oculus_device_right{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(30deg); opacity: 0;}
-    .content2>.store_box>.oculus_device_left{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(-30deg); opacity: 0; }
+    .mirroring_p1{position: fixed; left: 50%; top: 10%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s;}
+    .mirroring_p2{position: fixed; left: 30%; bottom: 30%; transform: translateX(-50%); color: #fff; font-size: 30px; opacity: 0; transition: 1s; font-size: 16px; line-height: 25px;}
+    .mirroring_p3{position: fixed; left: 70%; bottom: 18%; transform: translateX(-50%); color: #aaa; font-size: 30px; opacity: 0; transition: 1s; font-size: 12px; line-height: 18px;}
+    .content1>.store_box>.oculus_device{position: fixed; left: 20%; top: 0; right: 0; bottom: 0; margin: auto; transform: scale(0.7); opacity: 0;}
+    .content1>.store_box>.oculus_device_right{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(30deg); opacity: 0;}
+    .content1>.store_box>.oculus_device_left{position: fixed; left: 0; top: 10%; right: 0%; bottom: 0%; margin: auto; transform: scale(0.6) rotate(-30deg); opacity: 0; }
     .oculus_app_device2{width: 1100px; height: 1900px; position: absolute; left: 50px; top: 0; right: 0; bottom: 50px; margin: auto; opacity: 0; border-radius: 50px; transition: 1s;}
     .app_p{position: fixed; top: 50%; transform: translateY(-50%); left: 100px; color: #000; font-size: 24px; transition: 1s; opacity: 0; line-height: 30px;}
     .oculus_charge_images{position: fixed; width: 100%; height: 100vh; left: 0; top: 0; right: 0; bottom: 0; margin: auto; opacity: 0; transition: 1s; transform: scale(1);}
@@ -441,8 +441,8 @@
     .oculus_charge_p>li{display: inline-block; margin-right: 50px;}
     .oculus_charge_p>li>span{font-size: 44px;}
     .content3{position: relative; width: 100%; height: 5490px;  box-sizing: border-box;}
-    .content3_service_box{width: 100%; height: auto; background-color: #fff;}
-    .content3_service_box::after{content: ""; display: block; clear: both;}
+    .content3_sound_box{width: 100%; height: auto; background-color: #fff;}
+    .content3_sound_box::after{content: ""; display: block; clear: both;}
     .xr2_box{position: relative; width: 100%; height: 4000px; opacity: 1; background-color: #000; overflow: hidden;}
     .xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0;  box-sizing: border-box;}
     .xr2_images{position: absolute; left: 0; top: 0;  z-index: 9999999; width: 100vw; height: 100vh; margin-top: 0; box-sizing: border-box;}
@@ -588,7 +588,7 @@
         <h5>powred by meta desgined by oculus</h5>
     </div>
     </div>
-    <div class="content2">
+    <div class="content1">
         <!-- store -->
         <div class="store_box">
             <img src="game_images/The-Climb-1024x576.jpg" alt="" class="store_climb">
@@ -624,15 +624,16 @@
                 수천개가 넘어가는 어플들을 <br>
                 지금 오큘러스 스토어에서 다운받아보세요</p>
         </div>
-        <div class="content2_p_mirror">
+        <!-- mirroring -->
+        <div class="mirroring_p1">
             <p>오큘러스 quest 2의 새로운 기능 <br>
                헤드셋 미러링</p> 
         </div>
-        <div class="content2_p_mirror2">
+        <div class="mirroring_p2">
             <p>미러링 기능을 사용하면 VR에서 보이는 <br> 내용을 주변 사람들과 공유할 수 있습니다.<br> 컴퓨터, 휴대폰, 지원되는 Chromecast 기기 <br> 또는 TV로 미러링할 수 있습니다.
             </p> 
         </div>
-        <div class="content2_p_mirror3">
+        <div class="mirroring_p3">
             <p>오큘러스의 미러링은 quest2 이외에도 <br> quest1, go에서도 사용이 가능합니다. <br>
                 Chromecast 또는 기타 스마트 <br> 기능이 내장된 TV가 <br> 지원될 수 있지만 모든 모델과의 <br> 호환성이 보장되지는 않습니다. <br>
                 미러링과 녹화를 동시에 진행할 경우 <br> 문제가 발생할 수 있습니다. <br>
@@ -718,7 +719,7 @@
             </div>
         </div>
 <div class="content3">
-    <div class="content3_service_box">
+    <div class="content3_sound_box">
         <div class="sound_img_box">
             <img src="sound_effect.png" alt="" class="oculus_sound_effect">
         </div>
