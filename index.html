@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oculus</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="shortcut icon" href="Oculus-Symbol.ico" type="image/x-icon">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     <script>
         $(document).ready(function(){
@@ -64,13 +64,15 @@
                 $(this).children('li:nth-child(2)').stop().css({'transform':'rotate(-45deg)','margin-top':'-8px'})
                 $(this).children('li:nth-child(3)').stop().css({'opacity':'0'})
                 menu_num = 1;
-                $('.popup_box').stop().fadeIn()
+                $('.popup_box').stop().fadeIn();
+                $('body').css({'overflow':'hidden'})
                 }
                 else if(menu_num == 1){$(this).children('li:nth-child(1)').stop().css({'transform':'rotate(0deg','margin-top':'6px'})
                 $(this).children('li:nth-child(2)').stop().css({'transform':'rotate(-0deg)','margin-top':'6px'})
                 $(this).children('li:nth-child(3)').stop().css({'opacity':'1'})
                 menu_num = 0;
                 $('.popup_box').stop().fadeOut()
+                $('body').css({'overflow':'auto'})
                 }
                 
             })
@@ -84,13 +86,12 @@
         scrollYPosCharge = Math.round(sc-25000);
         scrollYPosCharge2 = Math.round(scrollYPosCharge/10);
         let s1 = $('.horizon').get(0)
-        let xr2Play = $('.xr2').get(0)
-        let oculusPlay = $('.oculus_charge').get(0)
         sc = $(this).scrollTop()
-        ss =$('.slide').height()
         $('.sc>h5').text(sc)
-        $('.oculus_charge_images').attr('src','oculus_charge_images/'+scrollYPosCharge2+'.jpg')
-        $('.xr2_images').attr('src','xr2_images/'+scrollYPos2+'.jpg')
+        if(sc>25000 && sc<26000){$('.oculus_charge_images').attr('src','oculus_charge_images/'+scrollYPosCharge2+'.jpg')}
+        if(sc>27000 && sc<28500){$('.xr2_images').attr('src','xr2_images/'+scrollYPos2+'.jpg')}
+        
+        
         if(sc<100){$('.mouse').css({'bottom':'80px'})}
         if(sc>=100){$('.mouse').css({'bottom':'10px'})}
         if(sc<=1200 || sc>6600){$('.store_climb').css({'transform':'scale(0)','opacity':'0'})}
@@ -167,7 +168,7 @@
         $('.mac_box').css({'right':'-100%'})}
         if(sc>15500 && sc<=16000){$('.ipad_box').css({'left':((sc-15500)*0.24)-100+'%'});
         $('.mac_box').css({'right':((sc-15500)*0.24)-100+'%'})}
-        if(sc>16000 && sc<=16500){$('.mirroring_p1').css({'opacity':1-((sc-15500)*0.002)})}
+        if(sc<=16500){$('.mirroring_p1').css({'opacity':'0'})}
         if(sc>16500 && sc<=17000){$('.mirroring_p1').css({'opacity':(sc-16500)*0.002})}
         if(sc>16000 && sc<=18000){$('.ipad_box').css({'left':'20%'});
         $('.mac_box').css({'right':'20%'})
@@ -269,17 +270,19 @@
         if(sc>28440){$('.xr2_images_box').css({'position':'relative','margin-top':'1440px'});
         $('.xr2_images').attr('src','xr2_images/144.jpg');
         $('.xr2_comparison').css({'opacity':'1'})}
-        if(sc<29200){$('.xr2_comparison div').css({'width':'0%'});
+        if(sc<29200){$('.xr2_comparison div').stop().css({'width':'0%'});
         $('.xr2_comparison p').css({'opacity':'0'})}
-        if(sc>29200){$('.xr2_comparison_list1>li:nth-child(1)>div').css({'width': '40%'});
-        $('.xr2_comparison_list1>li:nth-child(2)>div').css({'width':'20%'});
-        $('.xr2_comparison_list2>li:nth-child(1)>div').css({'width':'50%'});
-        $('.xr2_comparison_list2>li:nth-child(2)>div').css({'width':'20%'});
-        $('.xr2_comparison_list3>li:nth-child(1)>div').css({'width':'60%'});
-        $('.xr2_comparison_list3>li:nth-child(2)>div').css({'width':'20%'});
-        $('.xr2_comparison_list4>li:nth-child(1)>div').css({'width':'70%'});
-        $('.xr2_comparison_list4>li:nth-child(2)>div').css({'width':'10%'});
-        $('.xr2_comparison p').css({'opacity':'1'});}
+    if(sc>=29200){
+        $('.xr2_comparison_list1>li:nth-child(1)>div').stop().css({'width': '40%'},0);
+        $('.xr2_comparison_list1>li:nth-child(2)>div').stop().css({'width':'20%'},50);
+        $('.xr2_comparison_list2>li:nth-child(1)>div').stop().css({'width':'50%'},100);
+        $('.xr2_comparison_list2>li:nth-child(2)>div').stop().css({'width':'20%'},150);
+        $('.xr2_comparison_list3>li:nth-child(1)>div').stop().css({'width':'60%'},200);
+        $('.xr2_comparison_list3>li:nth-child(2)>div').stop().css({'width':'20%'},250);
+        $('.xr2_comparison_list4>li:nth-child(1)>div').stop().css({'width':'70%'},300);
+        $('.xr2_comparison_list4>li:nth-child(2)>div').stop().css({'width':'10%'},350);
+        $('.xr2_comparison p').css({'opacity':'1'});
+    }
         if(sc<=29800){$('.oculus_device_up_retouch').css({'top':'20%'})}
         if(sc>29900){$('.oculus_device_up_retouch').css({'top':'50%'})}
         if(sc>30000){$('.mouse').css({'color':'#000','border':'2px solid #000'});
@@ -307,7 +310,6 @@
         if(sc<=34200){$('.xr2_2_left_box_p2').css({'opacity':'0','top':'47%'})}
         $('.xr2_2_cv_img').css({'opacity':'0'});
         if(sc>34200 && sc<=34400){$('.xr2_2_left_box_p2').css({'top':(47-((sc-34200))*0.01)+'%','opacity':((sc-34200)*0.005)});
-        if(sc>33000){console.log('1')}
         $('.xr2_2_cv_img').css({'opacity':(((sc-34200)*0.005))})}
         if(sc>34100 && sc<34400){$('.xr2_2_left_box').css({'background-color':'rgb('+((sc-34100)*0.85)+','+(163-((sc-34100)*0.21))+',0)'})}
         if(sc>34400 && sc<=34900){$('.xr2_2_cv_img').css({'opacity':'1'});
@@ -351,19 +353,19 @@
     .menu>li{width: 30px; height: 2px; margin: 6px 0; border-radius: 3px; background-color: #fff; transition: 0.3s;}
     .popup_box{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 1);z-index: 10; display: none;}
     .popup_box>ul{float: right; color: #fff; font-size: 44px; margin: 100px 80px;}
-    .popup_box>ul>li{margin-top: 30px; opacity: 0.7; transition: 0.3s; text-align: right;}
+    .popup_box>ul>li{margin-top: 30px; opacity: 0.7; transition: 0.3s; text-align: right; letter-spacing: 2px;}
     .popup_box>ul>li:hover{opacity: 1;}
     .slide_box{width: 100%; height: 100%; position: relative; left: 0; top: 0; background-color: black; overflow: hidden; z-index: 9;}
     .slide_box::after{content: ""; display: block; clear: both;}
     .slide{position: absolute; left: 0; top: 0; width: 300%; }
     .slide>li{width: 33.3333%; float: left; background-color: #000; position: relative;}
     .slide>li>video{width: 100%; height: auto; opacity: 0.8;}
-    .slide>li:nth-child(1)>video{background: url(infinite\ office_clip1.mp4); background-size: cover; width: 100%; height: auto;}
     .slide_text_box{position: absolute; left: 140px; top: 114px; color: #fff;}
     .slide_text_box>h2{font-size: 30px;}
     .slide_text_box>h3{margin-top: 10px; font-size: 90px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 400;}
     .slide_text_box>p{font-size: 36px; margin-top: 20px;}
     .slide_text_box>a{background-color: #181ef9; color: #fff; font-size: 16px; padding: 15px 25px; border-radius: 50px; border: none; float: left; margin-top: 20px; margin-right: 20px; cursor: pointer; display: block;}
+    .slide_text_box>a:nth-of-type(2){background-color: #5d0499;}
     .mouse{width: 22px; height: 32px; border-radius: 30px; border: 2px solid #fff; box-sizing: border-box; position: fixed; bottom: 80px; left: 0; right: 0; margin: auto; transition: 0.3s; z-index: 9;}
     .mouse>p{position: absolute; top: -25px; right: -6px; font-size: 14px; font-weight: 700;}
     .mouse_wheel{width: 4px; height: 4px; background-color: #fff; border-radius: 5px; position: absolute; right:0; left: 0; top: 5px; margin: auto;}
@@ -406,7 +408,7 @@
     .store_combine{ transform: scale(0); margin-left: 00px; margin-top: -850px; opacity: 0;}
     .store_vr{ transform: scale(0); margin-left: -350px; margin-top: -530px; opacity: 0;}
     .iphone_box{position: absolute; left: 50%; top: 50%; transform: scale(0);  margin-left: -950px; margin-top: -535px; transition: 1s; z-index: 3; opacity: 0;}
-    .horizon_hz_blur{position: fixed; right: 0; top: 0; width: 50%; height: 100%; z-index: 2; backdrop-filter: blur(3px); transition: 1s; opacity: 1;}
+    .horizon_hz_blur{position: fixed; right: 0; top: 0; width: 50%; height: 100%; z-index: 2; -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);  transition: 1s; opacity: 1;}
     .store_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s; z-index: 3;}
     .store_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
     .horizon_hz_line{width: 3px; height: 100%; background-color: red; position: absolute; left: -1%; top: 0; transition: 1s; z-index: 3; transform: translateX(-50%); opacity: 0;}
@@ -456,18 +458,18 @@
     .xr2_comparison>li>ul{margin-top: 10px;}
     .xr2_img{width: 50px; margin-top: 10px; float: left; margin-left: 10px;}
     .snp_835_img{width: 50px; margin-top: 10px; float: left; clear: both; margin-left: 10px;}
-    .xr2_comparison div{float: left; width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s; position: relative;}
+    .xr2_comparison div{float: left; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s; position: relative;}
     .xr2_comparison p{line-height: 70px; margin-left: 10px; font-size: 20px; opacity: 0; display: inline-block;}
-    .xr2_comparison_list_line{width: 2px; height: 70px; background-color: #fff; float: left; margin-top: 0px; margin-left: 20px;}
+    .xr2_comparison_list_line{width: 2px; height: 70px; background-color: #666; float: left; margin-top: 0px; margin-left: 20px;}
     .xr2_chart{background-color: #e04e4f;}
-    .xr2_comparison_list1>li:nth-child(1)>div{width: 40%;}
-    .xr2_comparison_list1>li:nth-child(2)>div{width: 20%;}
-    .xr2_comparison_list2>li:nth-child(1)>div{width: 50%;}
-    .xr2_comparison_list2>li:nth-child(2)>div{width: 20%;}
-    .xr2_comparison_list3>li:nth-child(1)>div{width: 60%;}
-    .xr2_comparison_list3>li:nth-child(2)>div{width: 20%;}
-    .xr2_comparison_list4>li:nth-child(1)>div{width: 70%;}
-    .xr2_comparison_list4>li:nth-child(2)>div{width: 10%;}
+    .xr2_comparison_list1>li:nth-child(1)>div{width: 40%; transition: 0.3s;}
+    .xr2_comparison_list1>li:nth-child(2)>div{width: 20%; transition: 0.4s;}
+    .xr2_comparison_list2>li:nth-child(1)>div{width: 50%; transition: 0.5s;}
+    .xr2_comparison_list2>li:nth-child(2)>div{width: 20%; transition: 0.6s;}
+    .xr2_comparison_list3>li:nth-child(1)>div{width: 60%; transition: 0.7s;}
+    .xr2_comparison_list3>li:nth-child(2)>div{width: 20%; transition: 0.8s;}
+    .xr2_comparison_list4>li:nth-child(1)>div{width: 70%; transition: 0.9s;}
+    .xr2_comparison_list4>li:nth-child(2)>div{width: 10%; transition: 1s;}
     .snp_835_chart{background-color: #abbacf;}
     .xr2_content_box2{width: 100%; border: 1px solid #fff; box-sizing: border-box;}
     .xr2_content_bottom{width: 100%; height: 600px;  float: left; margin-top: 50px; position: relative;}
@@ -491,9 +493,9 @@
     .xr2_2_right_box>img{width: 100%; height: 100%; position: absolute; right: 0; top: 0; opacity: 1;}
     .xr2_2_game_img{opacity: 1;}
     .content4{width: 100%; height: 1000px; position: relative; background-color: #aaa;overflow: hidden; box-sizing: border-box;}
-    .content4>h2{text-align: center; font-size: 30px; color: #fff; margin-top: 100px;}
-    .companys_list{width: 70%; height: 90vh; margin: auto; margin-top: 50px; text-align: center;   overflow: hidden; background-color: #aaa;}
-    .companys_list>li{width: 16%; height: 100px; margin-right: 1%; margin-top: 4%; display: inline-block;}
+    .content4>h2{text-align: center; font-size: 30px; color: #fff; margin-top: 200px;}
+    .companys_list{width: 60%; height: 90vh; margin: auto; margin-top: 80px; text-align: center;   overflow: hidden; background-color: #aaa;}
+    .companys_list>li{width: 16%; height: 80px; margin-right: 1%; margin-top: 4%; display: inline-block;}
     .companys_list>li:nth-child(5n){margin-right: 0;}
     .companys_list>li>img{width: 50%; opacity: 0.7;}
     footer{width: 100%; height: 50px; line-height: 50px; background-color: #000; color: #aaa;  position: relative; z-index: 999;}
@@ -516,10 +518,10 @@
     </header>
     <div class="popup_box">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Career</a></li>
+            <li><a href="https://www.oculus.com/" target="blank">Home</a></li>
+            <li><a href="https://www.oculus.com/blog/" target="blank">Blog</a></li>
+            <li><a href="https://support.oculus.com/" target="blank">Support</a></li>
+            <li><a href="https://www.metacareers.com/areas-of-work/oculus/?p[divisions][0]=Oculus&divisions[0]=Oculus" target="blank">Career</a></li>
         </ul>
     </div>
     <div class="slide_box">
@@ -777,16 +779,16 @@
         <li><img src="company_logos/PlayStation_logo_white_resize.png" alt=""></li>
         <li><img src="company_logos/National_Geographic_logo_white_resize.png" alt=""></li>
         <li><img src="company_logos/Mercedes-Benz_Logo_white_resize.png" alt=""></li>
-        <li><img src="company_logos/Microsoft_logo_white_resize.png" alt=""></li>
-        <li><img src="company_logos/Microsoft_logo_white_resize.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white_resize.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white_resize.png" alt=""></li> <li><img src="company_logos/Microsoft_logo_white_resize.png" alt=""></li>
+        <li><img src="company_logos/ibm_logo_white.png" alt=""></li>
+        <li><img src="company_logos/toshiba_logo_white.png" alt=""></li> <li><img src="company_logos/qualcomm_logo_white.png" alt=""></li> <li><img src="company_logos/asus_logo_white.png" alt=""></li> <li><img src="company_logos/lg_logo_white.png" alt=""></li>
     </ul>
 </div>
 <footer>
     <div class="footer_left">Copyright © 2022 oculus Inc. All Rights Reserved.</div>
     <div class="footer_right">
         <ul>
-        <li><a href="#">개인정보처리방침</a></li>
-        <li><a href="#">법적 고지</a></li>
+        <li><a href="https://www.oculus.com/legal/privacy-policy/" target="blank">개인정보처리방침</a></li>
+        <li><a href="https://www.oculus.com/legal/terms-of-service/" target="blank">법적 고지</a></li>
         <li><a href="#">판매 및 환불</a></li>
         <li><a href="#">FAQ</a></li>
         <li><a href="#">대한민국</a></li>
