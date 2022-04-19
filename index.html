@@ -270,7 +270,7 @@
         $('.xr2_images').attr('src','xr2_images/144.jpg');
         $('.xr2_comparison').css({'opacity':'1'})}
         if(sc<29200){$('.xr2_comparison div').css({'width':'0%'});
-        $('.xr2_comparison span').css({'opacity':'0'})}
+        $('.xr2_comparison p').css({'opacity':'0'})}
         if(sc>29200){$('.xr2_comparison_list1>li:nth-child(1)>div').css({'width': '40%'});
         $('.xr2_comparison_list1>li:nth-child(2)>div').css({'width':'20%'});
         $('.xr2_comparison_list2>li:nth-child(1)>div').css({'width':'50%'});
@@ -279,8 +279,7 @@
         $('.xr2_comparison_list3>li:nth-child(2)>div').css({'width':'20%'});
         $('.xr2_comparison_list4>li:nth-child(1)>div').css({'width':'70%'});
         $('.xr2_comparison_list4>li:nth-child(2)>div').css({'width':'10%'});
-        $('.xr2_comparison span').css({'opacity':'1'});
-        $('..xr2_comparison div::before').css({'opacity':'1'})}
+        $('.xr2_comparison p').css({'opacity':'1'});}
         if(sc<=29800){$('.oculus_device_up_retouch').css({'top':'20%'})}
         if(sc>29900){$('.oculus_device_up_retouch').css({'top':'50%'})}
         if(sc>30000){$('.mouse').css({'color':'#000','border':'2px solid #000'});
@@ -308,9 +307,10 @@
         if(sc<=34200){$('.xr2_2_left_box_p2').css({'opacity':'0','top':'47%'})}
         $('.xr2_2_cv_img').css({'opacity':'0'});
         if(sc>34200 && sc<=34400){$('.xr2_2_left_box_p2').css({'top':(47-((sc-34200))*0.01)+'%','opacity':((sc-34200)*0.005)});
+        if(sc>33000){console.log('1')}
         $('.xr2_2_cv_img').css({'opacity':(((sc-34200)*0.005))})}
         if(sc>34100 && sc<34400){$('.xr2_2_left_box').css({'background-color':'rgb('+((sc-34100)*0.85)+','+(163-((sc-34100)*0.21))+',0)'})}
-        if(sc>34400 && sc<34900){$('.xr2_2_cv_img').css({'opacity':'1'});
+        if(sc>34400 && sc<=34900){$('.xr2_2_cv_img').css({'opacity':'1'});
         $('.xr2_2_left_box').css({'background-color':'rgb(255,100,0)'})}
         if(sc>34400 && sc<34600){$('.xr2_2_left_box_p2').css({'opacity':'1','top':'45%'});}
         if(sc>34900 && sc<=35100){$('.xr2_2_left_box_p2').css({'top':(45-((sc-34900))*0.01)+'%','opacity':(1-((sc-34900)*0.005))});
@@ -392,7 +392,7 @@
     .play{cursor: pointer;}
     .sns{ float: right; margin-top: 25px; margin-right: 20px; }
     .sns>li{float: left; width: 30px; height: 30px; margin-left: 10px; cursor: pointer; opacity: 0.7;}
-    .sns>li>img{width: 100%; vertical-align: top;}
+    .sns>li>a>img{width: 100%; vertical-align: top;}
     .sns>li:hover{opacity: 1;}
     .content1{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative;}
     .store_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
@@ -409,10 +409,10 @@
     .horizon_hz_blur{position: fixed; right: 0; top: 0; width: 50%; height: 100%; z-index: 2; backdrop-filter: blur(3px); transition: 1s; opacity: 1;}
     .store_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s; z-index: 3;}
     .store_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
-    .horizon_hz_line{width: 3px; height: 100%; background-color: red; position: absolute; left: -1%; top: 0; transition: 1s; z-index: 2; transform: translateX(-50%); opacity: 0;}
+    .horizon_hz_line{width: 3px; height: 100%; background-color: red; position: absolute; left: -1%; top: 0; transition: 1s; z-index: 3; transform: translateX(-50%); opacity: 0;}
     .horizon_hz_p{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s; z-index: 3;}
     .horizon_hz_p>p{color: #fff; font-size: 40px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);}
-    .horizon_hz_box{position: fixed; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; margin: auto;  font-size: 40px; }
+    .horizon_hz_box{position: fixed; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; margin: auto;  font-size: 40px; z-index: 3;}
     .horizon_90hz{position: absolute; left: 0; top: 0; color: #fff; margin: 20px; opacity: 0; transition: 1s;}
     .horizon_72hz{position: absolute; right: 0; top: 0; color: #fff; margin: 20px; opacity: 0; transition: 1s;}
     .iphone{transform:  rotate(270deg); width: 1600px; height: 2040px; position: fixed; left: 40px; right: 0; top: 0; bottom: 0; margin: auto; transition: 1s; z-index: 9999; opacity: 0;}
@@ -445,19 +445,20 @@
     .content3_sound_box::after{content: ""; display: block; clear: both;}
     .xr2_box{position: relative; width: 100%; height: 4000px; opacity: 1; background-color: #000; overflow: hidden;}
     .xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0;  box-sizing: border-box;}
-    .xr2_images{position: absolute; left: 0; top: 0;  z-index: 9999999; width: 100vw; height: 100vh; margin-top: 0; box-sizing: border-box;}
+    .xr2_images{position: absolute; left: 0; top: 0;  z-index: 8; width: 100vw; height: 100vh; margin-top: 0; box-sizing: border-box;}
     .xr2_content_box{width: 80%; height: 100%; margin: auto; margin-top: 100px; text-align: center;}
     .xr2_p{color: #fff; width: 60%; font-size: 40px; margin-top: 100px; font-weight: 700; float: left; clear: both; }
-    .xr2_p2{color: #aaa; width: 50%; font-size: 20px; margin-top: 100px; margin-left: 10%;font-weight: 700; float: left; text-align: left; line-height: 30px;}
-    .xr2_comparison{width: 40%; height: 700px; float: right; background-color: rgba(255, 255, 255, 0.1);}
-    .xr2_comparison>li{width: 100%; height: 25%; text-align: left;  color: #fff; box-sizing: border-box; overflow: hidden;}
-    .xr2_comparison>li>h5{text-align: center; margin-top: 10px; line-height: 0px;}
+    .xr2_p2{color: #aaa; width: 42%; font-size: 20px; margin-top: 100px; margin-left: 18%;font-weight: 700; float: left; text-align: left; line-height: 30px;}
+    .xr2_comparison{width: 40%; height: 750px; float: right; background-color: rgba(255, 255, 255, 0.1);}
+    .xr2_comparison>li{width: 100%; height: 25%; text-align: left;  color: #fff; box-sizing: border-box; overflow: hidden; border-bottom: 1px solid #666;}
+    .xr2_comparison>li:last-child{border-bottom: none;}
+    .xr2_comparison>li>h5{text-align: center; margin-top: 20px; line-height: 0px;}
     .xr2_comparison>li>ul{margin-top: 10px;}
-    .xr2_img{width: 50px; margin-top: 10px; float: left;}
-    .snp_835_img{width: 50px; margin-top: 10px; float: left; clear: both;}
-    .xr2_comparison div{float: left; margin-left: 20px; width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s; position: relative;}
-    .xr2_comparison div::before{content: ""; width: 2px; height: 70px; background-color: #fff; position: absolute; left: 0; bottom: 0; top: 0; margin: auto;}
-    .xr2_comparison span{line-height: 70px; margin-left: 10px; font-size: 20px; opacity: 0;}
+    .xr2_img{width: 50px; margin-top: 10px; float: left; margin-left: 10px;}
+    .snp_835_img{width: 50px; margin-top: 10px; float: left; clear: both; margin-left: 10px;}
+    .xr2_comparison div{float: left; width: 80%; height: 10px; line-height: 80px; margin-top: 30px; border-radius: 0px 10px 10px 0px; transition: 0.3s; position: relative;}
+    .xr2_comparison p{line-height: 70px; margin-left: 10px; font-size: 20px; opacity: 0; display: inline-block;}
+    .xr2_comparison_list_line{width: 2px; height: 70px; background-color: #fff; float: left; margin-top: 0px; margin-left: 20px;}
     .xr2_chart{background-color: #e04e4f;}
     .xr2_comparison_list1>li:nth-child(1)>div{width: 40%;}
     .xr2_comparison_list1>li:nth-child(2)>div{width: 20%;}
@@ -484,7 +485,7 @@
     .xr2_2_left_box{float: left; width: 50%; height: 100vh; position: relative; background-color: rgb(0, 163, 0);}
     .xr2_2_left_box>h1{position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center;}
     .xr2_2_left_box>h2{position: absolute; top: 40%; left: 50%; transform: translateX(-50%);}
-    .xr2_2_left_box>p{position: absolute; top: 47%; left: 50%; opacity: 0; transform: translateX(-50%);}
+    .xr2_2_left_box>p{position: absolute; top: 47%; left: 50%; opacity: 0; transform: translateX(-50%); font-size: 24px;}
     .xr2_2_left_box_p1{opacity: 1; top: 45%;}
     .xr2_2_right_box{float: right; width: 50%; height: 100vh; position: relative;}
     .xr2_2_right_box>img{width: 100%; height: 100%; position: absolute; right: 0; top: 0; opacity: 1;}
@@ -495,7 +496,7 @@
     .companys_list>li{width: 16%; height: 100px; margin-right: 1%; margin-top: 4%; display: inline-block;}
     .companys_list>li:nth-child(5n){margin-right: 0;}
     .companys_list>li>img{width: 50%; opacity: 0.7;}
-    footer{width: 100%; height: 50px; line-height: 50px; background-color: #000; color: #aaa; }
+    footer{width: 100%; height: 50px; line-height: 50px; background-color: #000; color: #aaa;  position: relative; z-index: 999;}
     .footer_left{float: left; margin-left: 50px; font-size: 14px;}
     .footer_right>ul{float: right;}
     .footer_right>ul>li{float: left; margin-right: 50px; font-size: 12px;}
@@ -504,7 +505,7 @@
 <body>
     <header>
         <div class="header_box">
-                <img src="Oculus-Symbol_white.png" alt="" class="logo">
+            <a href="#"><img src="Oculus-Symbol_white.png" alt="" class="logo"></a> 
             <ul class="menu">
                 <li></li>
                 <li></li>
@@ -578,9 +579,9 @@
         <li>EN</li>
     </ul>
     <ul class="sns">
-        <li><img src="fb_icon.png" alt=""></li>
-        <li><img src="youtube_icon.png" alt=""></li>
-        <li><img src="ins_icon.png" alt=""></li>
+        <li><a href="https://www.facebook.com/MetaQuestVR/" target="blank"><img src="fb_icon.png" alt=""></a></li>
+        <li><a href="https://www.instagram.com/metaquest/" target="blank"><img src="youtube_icon.png" alt=""></a></li>
+        <li><a href="https://www.youtube.com/channel/UC766vkQw0Mz3VtXX5XvXxGQ" target="blank"><img src="ins_icon.png" alt=""></a></li>
     </ul>
     </div>
     <div class="slide_text_box3">
@@ -648,7 +649,7 @@
         <div class="horizon_hz_p">
             <p>전작대비 20% 증가한 주사율 <br>
                 fhd의 풍부한 해상도 <br>
-                아이당 1832x1920픽셀의 <br> 편안한 디스플레이로 <br>
+                1832x1920픽셀의 <br> 편안한 디스플레이로 <br>
                 지금 즐겨보세요 <br>
             </p>
         </div>
@@ -685,26 +686,42 @@
                 <ul class="xr2_comparison">
                     <li><h5>CPU</h5>
                         <ul class="xr2_comparison_list1">
-                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img"><div class="xr2_chart"></div><span>2x</span></li>
-                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img"><div class="snp_835_chart"></div></li>
+                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="xr2_chart"></div><p>2x</p></li>
+                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="snp_835_chart"></div></li>
                         </ul>
                     </li>
                     <li><h5>VIDEO</h5>
                         <ul class="xr2_comparison_list2">
-                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img"><div class="xr2_chart"></div><span>4x</span></li>
-                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img"><div class="snp_835_chart"></div></li>
+                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="xr2_chart"></div><p>4x</p></li>
+                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="snp_835_chart"></div></li>
                         </ul>
                     </li>
                     <li><h5>DISPLAY</h5>
                         <ul class="xr2_comparison_list3">
-                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img"><div class="xr2_chart"></div><span>6x</span></li>
-                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img"><div class="snp_835_chart"></div></li>
+                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="xr2_chart"></div><p>6x</p></li>
+                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="snp_835_chart"></div></li>
                         </ul>
                     </li>
                     <li><h5>AI PERFORMANCE</h5>
                         <ul class="xr2_comparison_list4">
-                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img"><div class="xr2_chart"></div><span>11x</span></li>
-                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img"><div class="snp_835_chart"></div></li>
+                            <li><img src="xr2_image_resize.png" alt="" class="xr2_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="xr2_chart"></div><p>11x</p></li>
+                            <li><img src="300px-Qualcomm-Snapdragon-835.png" alt="" class="snp_835_img">
+                                <span class="xr2_comparison_list_line"></span>
+                                <div class="snp_835_chart"></div></li>
                         </ul>
                     </li>
                 </ul>
@@ -731,10 +748,9 @@
     <div class="xr2_2_box">
         <div class="xr2_2_left_box">
             <h1>당신이 oculus quest 2를 <br> 구매해야 하는 이유</h1>
-            <h2>xr2칩의</h2>
-            <p class="xr2_2_left_box_p1">2배 더 빠른 속도</p>
+            <p class="xr2_2_left_box_p1">2배 더 많아진 램과 메모리</p>
             <p class="xr2_2_left_box_p2">보다 높은 몰입감을 주는 ai 퍼포먼스</p>
-            <p class="xr2_2_left_box_p3">최초의 5G</p>
+            <p class="xr2_2_left_box_p3">최초의 5G vr 기기</p>
         </div>
         <div class="xr2_2_right_box">
             <img src="company_logos/high_quality_game_img_resize.png" alt="" class="xr2_2_game_img">
@@ -777,6 +793,7 @@
     </ul>
 </div>
 </footer>
-    <div class="sc"><h5>0</h5></div>
+    <div class="sc"><h5>0</h5>
+    <h6>favicon</h6></div>
 </body>
 </html>
