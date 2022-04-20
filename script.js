@@ -12,11 +12,11 @@ $('.slide_bt>li').click(function(){
 })
 let num = 1;
 $('.play').click(function(){
-    if(num == 1){$(this).attr({'src':'slide_pause_bt.png'});
+    if(num == 1){$(this).attr({'src':'icon/slide_pause_bt.png'});
     num =0;
     slide_bt_click = 0;
     }
-    else if(num == 0){$(this).attr({'src':'slide_play_bt.png'});
+    else if(num == 0){$(this).attr({'src':'icon/slide_play_bt.png'});
     num =1;
     slide_bt_click = 100;
     }
@@ -313,7 +313,10 @@ $('.xr2_2_5g_img').css({'opacity':'0'})}
 if(sc>34900 & sc<=35100){$('.xr2_2_left_box').css({'background-color':'rgb(255,'+(100+((sc-34900)*0.775))+','+((sc-34900)*1.275)+')'});}
 if(sc>35100){$('.xr2_2_left_box').css({'background-color':'rgb(255,255,255)'})}
 if(sc>35000 && sc<=35200){$('.xr2_2_left_box_p3').css({'top':(47-((sc-35000))*0.01)+'%','opacity':((sc-35000)*0.005)});
-$('.xr2_2_5g_img').css({'opacity':(((sc-35000)*0.005))})}
+$('.xr2_2_5g_img').css({'opacity':(((sc-35000)*0.005))});}
+if(sc>35200){$('.xr2_2_left_box_p3').css({'opacity':'1'});
+$('.xr2_2_5g_img').css({'opacity':'1'})
+}
 $('.companys_list>li>img').mouseenter(function(){
 $(this).css({'opacity':'1'})})
 $('.companys_list>li>img').mouseleave(function(){

@@ -55,7 +55,7 @@
     .sns>li>a>img{width: 100%; vertical-align: top;}
     .sns>li:hover{opacity: 1;}
     .content1{width: 100%; height: 26000px; background-color: rgba(0, 0, 0, 1); position: relative;}
-    .store_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
+    .game_img_box>img{transition: 1s; position: absolute; left: 50%; top: 50%;}
     .store_box{position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%;  transition: 0.3s;}
     .store_climb{ transform: scale(0); margin-left: -1200px; margin-top: -600px; opacity: 0;}
     .store_0x0{ transform: scale(0); margin-left: -1500px; margin-top: -400px; opacity: 0;}
@@ -132,7 +132,7 @@
     .xr2_content_box2{width: 100%; border: 1px solid #fff; box-sizing: border-box;}
     .xr2_content_bottom{width: 100%; height: 600px;  float: left; margin-top: 50px; position: relative;}
     .oculus_device_up_retouch{position: absolute; right: 50%; transform: translateX(50%); top: 0%; width: 50%; transition: 0.3s;}
-    .sound_img_box{width: 100%; height: 100vh; background: url('oculus_rift.jpg') center no-repeat fixed; position: relative; overflow: hidden;}
+    .sound_img_box{width: 100%; height: 100vh; background: url('images/oculus_rift.jpg') center no-repeat fixed; position: relative; overflow: hidden;}
     .oculus_sound{width: 100%;}
     .oculus_sound_effect{position: absolute; left: 0; top: 0; right: 0; margin: auto; width: 80%;}
     .oculus_sound_p{margin: 100px; font-size: 40px;}
