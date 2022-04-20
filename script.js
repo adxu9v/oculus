@@ -70,15 +70,15 @@ let sc = 0;
 let scrollYPos = 0;
 let scrollYPosCharge = 0;
 $(window).scroll(function(){
-scrollYPos = Math.round(sc-27000);
+scrollYPos = sc-26999;
 scrollYPos2 = Math.round(scrollYPos/10)
 scrollYPosCharge = Math.round(sc-25000);
 scrollYPosCharge2 = Math.round(scrollYPosCharge/10);
 let s1 = $('.horizon').get(0)
 sc = $(this).scrollTop()
-$('.sc>h5').text(sc)
+$('.sc>h5').text(scrollYPos2)
 if(sc>25000 && sc<26000){$('.oculus_charge_images').attr('src','images/oculus_charge_images/'+scrollYPosCharge2+'.jpg')}
-if(sc>27000 && sc<28500){$('.xr2_images').attr('src','images/xr2_images/'+scrollYPos2+'.jpg')}
+if(sc>27000 && sc<28440){$('.xr2_images').attr('src','images/xr2_images/'+scrollYPos2+'.jpg')}
 
 
 if(sc<100){$('.mouse').css({'bottom':'80px'})}
@@ -230,8 +230,8 @@ $('.oculus_device_left').css({'right':'20%'})
 if(sc<24000){$('.oculus_device_right').css({'opacity':'1'});
 $('.oculus_device_left').css({'opacity':'1'})}}
 if(sc>24000 && sc <=24500){$('.oculus_device').css({'transform':'scale('+(0.7+((sc-24000)*0.00025)) +')'});
-$('.oculus_device_right').css({'opacity':1-(sc-24000)*0.02});
-$('.oculus_device_left').css({'opacity':1-(sc-24000)*0.02})}
+$('.oculus_device_right').css({'opacity':1-(sc-24000)*0.002});
+$('.oculus_device_left').css({'opacity':1-(sc-24000)*0.002})}
 if(sc>24500){$('.oculus_device_right').css({'opacity':'0'});
 $('.oculus_device_left').css({'opacity':'0'})}
 if(sc<24500 || sc>27500){$('.oculus_charge_images').css({'opacity':'0'});
@@ -251,10 +251,10 @@ if(sc>26500 && sc<=27000){$('.xr2_Tumb').css({'opacity':((sc-26500)*0.002)})}
 if(sc>20000 && sc<=27500){$('.content1').css({'background-color':'#fff'})}
 if(sc>27500 && sc<=28500){$('.content1').css({'background-color':'rgb('+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+','+(255-((sc-27500)*0.255))+')'})}
 if(sc>28500){$('.content1').css({'background-color':'#000'})}
-if(sc<=27005){$('.xr2_images_box').css({'margin-top':'0px','position':'relative'});
-$('.xr2_images').attr('src','images/xr2_images/1.jpeg');
+if(sc<=27000){$('.xr2_images_box').css({'margin-top':'0px','position':'relative'});
 $('.xr2_comparison').css({'opacity':'1'})}
-if(sc>27005 && sc<=28440){$('.xr2_images_box').css({'position':'fixed','margin-top':'0px'});
+if(sc<27200){$('.xr2_images').attr('src','images/xr2_images/1.jpg');}
+if(sc>27000 && sc<=28440){$('.xr2_images_box').css({'position':'fixed','margin-top':'0px'});
 $('.xr2_comparison').css({'opacity':'0'})}
 if(sc>28440){$('.xr2_images_box').css({'position':'relative','margin-top':'1440px'});
 $('.xr2_images').attr('src','images/xr2_images/144.jpg');
