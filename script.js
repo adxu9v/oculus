@@ -1,10 +1,10 @@
 $(document).ready(function(){
-    $('.mouse_wheel').animate({'top':'10px','opacity':'0'},1500)
-    $('.mouse_wheel').animate({'top':'5px','opacity':'1'},0)
+    $('.mouse').animate({'bottom':'50px'},1000)
+    $('.mouse').animate({'bottom':'30px'},1000)
     setInterval(function(){
-        $('.mouse_wheel').animate({'top':'10px','opacity':'0'},1500)
-    $('.mouse_wheel').animate({'top':'5px','opacity':'1'},0)
-    },1550)
+        $('.mouse').animate({'bottom':'50px'},1000)
+    $('.mouse').animate({'bottom':'30px'},1000)
+    },2050)
 $('.slide_bt>li').click(function(){
     $(this).css({'background-color':'#fff','border':'none'}).siblings().css({'background':'none','border':'2px solid #aaa'});
     $('.slide').animate({'left':$(this).index()*-100+'%'})
@@ -76,13 +76,9 @@ scrollYPosCharge = Math.round(sc-25000);
 scrollYPosCharge2 = Math.round(scrollYPosCharge/10);
 let s1 = $('.horizon').get(0)
 sc = $(this).scrollTop()
-$('.sc>h5').text(scrollYPos2)
+$('.sc>h5').text(sc)
 if(sc>25000 && sc<26000){$('.oculus_charge_images').attr('src','images/oculus_charge_images/'+scrollYPosCharge2+'.jpg')}
 if(sc>27000 && sc<28440){$('.xr2_images').attr('src','images/xr2_images/'+scrollYPos2+'.jpg')}
-
-
-if(sc<100){$('.mouse').css({'bottom':'80px'})}
-if(sc>=100){$('.mouse').css({'bottom':'10px'})}
 if(sc<=1200 || sc>6600){$('.store_climb').css({'transform':'scale(0)','opacity':'0'})}
 if(sc>1200 && sc <=1600){$('.store_climb').css({'transform':'scale('+(sc-1200)*0.00125+')','opacity':'1'})}
 if(sc>1600 && sc<=6200){$('.store_climb').css({'transform':'scale(0.5)','opacity':'1'})}
@@ -173,15 +169,15 @@ if(sc>18500){$('.mirroring_p1,.mirroring_p2,.mirroring_p3').css({'opacity':'0'})
 if(sc>18500){$('.ipad_box').css({'left':'-30%'});
 $('.mac_box').css({'right':'-40%'})}
 if(sc<19000){$('.content1').css({'background-color':'#000'});
-$('.mouse').css({'border':'2px solid #fff','color':'#fff'});
-$('.mouse_wheel').css({'background-color':'#fff'})}
+$('.mouse>div').css({'background-color':'#fff'});
+$('.mouse_box>p').css({'color':'#fff'})}
 if(sc>19000 && sc<=20000){$('.content1').css({'background-color':'rgba('+(sc-19000)*0.255+','+(sc-19000)*0.255+','+(sc-19000)*0.255+')'});
-$('.mouse').css({'border':'2px solid #000','color':'#000'});
-$('.mouse_wheel').css({'background-color':'#000'})}    
+$('.mouse>div').css({'background-color':'#000'});
+$('.mouse_box>p').css({'color':'#000'})}    
 if(sc<=20000){$('.oculus_app_login').css({'transform':'rotate(-90deg)'})}
 if(sc>20000){$('.content1').css({'background':'#fff'});
-$('.mouse').css({'border':'2px solid #000','color':'#000'})
-$('.mouse_wheel').css({'background-color':'#000'});
+$('.mouse>div').css({'background-color':'#000'})
+$('.mouse_box>p').css({'color':'#000'});
 $('.oculus_app_login').css({'transform':'rotate(0deg)'})}
 if(sc<20000){$('.iphone').css({'transform':'rotate(270deg)'});
 $('.horizon').css({'transform':'rotate(0deg)'})}
@@ -244,8 +240,9 @@ if(sc<=25000){$('.oculus_charge_images').attr('src','images/oculus_charge_images
 if(sc>25000 && sc<26000){$('.oculus_charge_images, .oculus_charge_p').css({'opacity':'1'})}
 if(sc>25500 && sc<=26000){$('.oculus_charge_images, .oculus_charge_p').css({'opacity':1-((sc-25500)*0.002)})}
 if(sc>26000){$('.oculus_charge_images, .oculus_charge_p').css({'opacity':'0'});
-$('.mouse').css({'color':'#fff','border':'2px solid #fff'})
-$('.mouse_wheel').css({'background-color':'#fff'})}
+}
+if(sc>26100){$('.mouse_box>p').css({'color':'#fff'});
+$('.mouse>div').css({'background-color':'#fff'})}
 if(sc<26500){$('.xr2_Tumb').css({'opacity':'0'})}
 if(sc>26500 && sc<=27000){$('.xr2_Tumb').css({'opacity':((sc-26500)*0.002)})}
 if(sc>20000 && sc<=27500){$('.content1').css({'background-color':'#fff'})}
@@ -274,8 +271,9 @@ $('.xr2_comparison p').css({'opacity':'1'});
 }
 if(sc<=29800){$('.oculus_device_up_retouch').css({'top':'20%'})}
 if(sc>29900){$('.oculus_device_up_retouch').css({'top':'50%'})}
-if(sc>30000){$('.mouse').css({'color':'#000','border':'2px solid #000'});
-$('.mouse_wheel').css({'background-color':'#000'})}
+if(sc>30000){$('.mouse>div').css({'background-color':'#000'});
+}
+if(sc>30100){$('.mouse_box>p').css({'color':'#000'})}
 if(sc<=30700){$('.oculus_sound_effect').css({'opacity':'1'})}
 if(sc>30700 && sc<=31000){$('.oculus_sound_effect').css({'opacity':(1-((sc-30700)*0.003))})}
 if(sc>31000 && sc<=31200){$('.oculus_sound_effect').css({'opacity':(0.1+((sc-31000)*0.004))})}

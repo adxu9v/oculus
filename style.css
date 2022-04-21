@@ -24,8 +24,11 @@ header{width: 100%; height: 60px; position: absolute; left: 0; right: 0; top: 0;
 .slide_text_box>p{font-size: 36px; margin-top: 20px;}
 .slide_text_box>a{background-color: #181ef9; color: #fff; font-size: 16px; padding: 15px 25px; border-radius: 50px; border: none; float: left; margin-top: 20px; margin-right: 20px; cursor: pointer; display: block;}
 .slide_text_box>a:nth-of-type(2){background-color: #5d0499;}
-.mouse{width: 22px; height: 32px; border-radius: 30px; border: 2px solid #fff; box-sizing: border-box; position: fixed; bottom: 80px; left: 0; right: 0; margin: auto; transition: 0.3s; z-index: 9;  color: #fff;}
-.mouse>p{position: absolute; top: -25px; right: -6px; font-size: 14px; font-weight: 700;}
+.mouse_box{z-index: 9999999; position: relative; left: 0; bottom: 0;}
+.mouse{ background-color: #fff; box-sizing: border-box; position: fixed; bottom: 40px; left: 30px;  transition: 0.3s; z-index: 99999;  color: #fff;}
+.mouse_box>p{position: fixed; bottom: 160px; left: 15px; font-size: 14px; font-weight: 700; transform: rotate(-90deg); color: #fff; z-index: 999999;}
+.mouse_line2{width: 4px; height: 80px; background-color: #fff; position: absolute; left: 10px; bottom: 0px; z-index: 999999;}
+.mouse_line{width: 4px; height: 20px; background-color: #fff; position: absolute; left: 4px; bottom: -3px; transform: rotate(-45deg);}
 .mouse_wheel{width: 4px; height: 4px; background-color: #fff; border-radius: 5px; position: absolute; right:0; left: 0; top: 5px; margin: auto;}
 .slide_bt_box{width: 100px; position: absolute; left: 0; right: 0; bottom: 36px; margin: auto;}
 .slide_bt{float: right;}
@@ -104,7 +107,7 @@ bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85)
 .content3_sound_box{width: 100%; height: auto; background-color: #fff;}
 .content3_sound_box::after{content: ""; display: block; clear: both;}
 .xr2_box{position: relative; width: 100%; height: 4000px; opacity: 1; background-color: #000; overflow: hidden;}
-.xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0;  box-sizing: border-box; z-index: 9999;}
+.xr2_images_box{width: 100%; height: 100vh; position: relative; left: 0; top: 0; margin-top: 0;  box-sizing: border-box; }
 .xr2_images{position: absolute; left: 0; top: 0;  z-index: 8; width: 100vw; height: 100vh; margin-top: 0; box-sizing: border-box;}
 .xr2_content_box{width: 80%; height: 100%; margin: auto; margin-top: 100px; text-align: center; }
 .xr2_p{color: #fff; width: 60%; font-size: 40px; margin-top: 100px; font-weight: 700; float: left; clear: both; }
@@ -132,7 +135,7 @@ bottom: 0; margin: auto; vertical-align: top;z-index: -1; transform: scale(0.85)
 .xr2_content_box2{width: 100%; border: 1px solid #fff; box-sizing: border-box;}
 .xr2_content_bottom{width: 100%; height: 600px;  float: left; margin-top: 50px; position: relative;}
 .oculus_device_up_retouch{position: absolute; right: 50%; transform: translateX(50%); top: 0%; width: 50%; transition: 0.3s;}
-.sound_img_box{width: 100%; height: 100vh; background: url('images/oculus_rift.jpg') center no-repeat fixed; position: relative; overflow: hidden;}
+.sound_img_box{width: 100%; height: 100vh; background: url('images/oculus_rift.jpg') center no-repeat fixed; background-size: cover; position: relative; overflow: hidden;}
 .oculus_sound{width: 100%;}
 .oculus_sound_effect{position: absolute; left: 0; top: 0; right: 0; margin: auto; width: 80%;}
 .oculus_sound_p{margin: 100px; font-size: 40px;}
