@@ -192,23 +192,25 @@ if(sc<=21000){ $('.oculus_device').css({'opacity':'0'});
 $('.oculus_device_right').css({'opacity':'0'});
 $('.oculus_device_left').css({'opacity':'0'});}
 if(sc>21000 && sc<=21500){$('.iphone_box').css({'left':(50-(sc-21000)*0.015)+'%'});
-$('.oculus_device').css({'opacity':((sc-21000)*0.02)});
-$('.oculus_device_right').css({'opacity':(sc-21000)*0.02});
-$('.oculus_device_left').css({'opacity':(sc-21000)*0.02});
-$('.horizon').css({'opacity':(1-(sc-21000)*0.02)});}
+$('.oculus_device').css({'opacity':((sc-21000)*0.002)});
+$('.oculus_device_right').css({'opacity':(sc-21000)*0.002});
+$('.oculus_device_left').css({'opacity':(sc-21000)*0.002});
+$('.horizon').css({'opacity':(1-(sc-21000)*0.002)});}
 if(sc>21500){$('.oculus_device').css({'opacity':'1'});
 $('.oculus_device_right').css({'opacity':'1'});
 $('.oculus_device_left').css({'opacity':'1'});
 $('.horizon').css({'opacity':'0'})}
 if(sc>21500 && sc<23500){$('.iphone_box').css({'left':'42.5%'})}
+if(sc>21500 && sc<=22000){$('.app_p').css({'opacity':(sc-21500)*0.02})}
+if(sc>22000 && sc<=23000){$('.app_p').css({'opacity':'1'})}
 if(sc>21000 && sc<=22500){$('.oculus_app_login').css({'opacity':'1'})}
 if(sc<=22500){$('.oculus_app_device2').css({'opacity':'0'})}
 if(sc>22500 && sc<=23000){$('.oculus_app_login').css({'opacity':(1-(sc-22500)*0.02)});
 $('.oculus_app_device2').css({'opacity':(sc-22500)*0.02});
-$('.app_p').css({'opacity':(sc-22500)*0.02})}
+}
 if(sc>23000){$('.oculus_app_login').css({'opacity':'0'});
 $('.oculus_app_device2').css({'opacity':'1'})}
-if(sc<22500){$('.app_p').css({'opacity':'0'})}
+if(sc<21500){$('.app_p').css({'opacity':'0'})}
 if(sc<=23000){$('.iphone_box').css({'opacity':'1'});
 $('.oculus_device').css({'left':'20%'})
 $('.oculus_device_right').css({'left':'40%'});
